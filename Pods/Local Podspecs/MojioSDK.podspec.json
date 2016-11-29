@@ -1,0 +1,47 @@
+{
+  "name": "MojioSDK",
+  "version": "2.0.0",
+  "summary": "Framework for adding Mojio support to your iOS app",
+  "homepage": "https://github.com/mojio/mojio-ios-sdk",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Mojio, Inc.": "support@moj.io"
+  },
+  "social_media_url": "https://twitter.com/getmojio",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "requires_arc": true,
+  "source": {
+    "git": "https://github.com/mojio/mojio-ios-sdk.git",
+    "tag": "v2.0.0",
+    "submodules": true
+  },
+  "source_files": "MojioSDK/**/*.{h,swift}",
+  "dependencies": {
+    "Alamofire": [
+
+    ],
+    "SwiftyJSON": [
+
+    ],
+    "ObjectMapper": [
+
+    ],
+    "KeychainSwift": [
+
+    ],
+    "OHHTTPStubs": [
+
+    ],
+    "OHHTTPStubs/Swift": [
+
+    ],
+    "SwiftWebSocket": [
+
+    ]
+  }
+}

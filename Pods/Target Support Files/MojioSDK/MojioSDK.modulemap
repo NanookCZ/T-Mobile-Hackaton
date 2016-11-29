@@ -1,0 +1,6 @@
+framework module MojioSDK {
+  umbrella header "MojioSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
