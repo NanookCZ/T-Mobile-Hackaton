@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7471e03-6e97-464c-9782-abd256ba1047" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/T-Mobile-Hackaton.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kitt/Assets.xcassets/carImg.imageset/carImg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kitt/Assets.xcassets/carImg.imageset/Contents.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kitt/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/kitt/Base.lproj/Main.storyboard" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />

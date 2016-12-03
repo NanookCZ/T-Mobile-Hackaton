@@ -11,6 +11,8 @@
 		1B63FE341DF29BDA00352155 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B63FE331DF29BDA00352155 /* LoginVC.swift */; };
 		1B63FE371DF29F1200352155 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B63FE361DF29F1200352155 /* SeparatorView.swift */; };
 		1B63FE391DF2A24A00352155 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B63FE381DF2A24A00352155 /* Extensions.swift */; };
+		1B63FE3B1DF2B1C800352155 /* GarageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B63FE3A1DF2B1C800352155 /* GarageVC.swift */; };
+		1B63FE3D1DF2B23400352155 /* GarageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B63FE3C1DF2B23400352155 /* GarageCell.swift */; };
 		AB2468681DEE3A8C0066F46F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2468671DEE3A8C0066F46F /* AppDelegate.swift */; };
 		AB24686D1DEE3A8C0066F46F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB24686B1DEE3A8C0066F46F /* Main.storyboard */; };
 		AB24686F1DEE3A8C0066F46F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB24686E1DEE3A8C0066F46F /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		1B63FE331DF29BDA00352155 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		1B63FE361DF29F1200352155 /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		1B63FE381DF2A24A00352155 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1B63FE3A1DF2B1C800352155 /* GarageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageVC.swift; sourceTree = "<group>"; };
+		1B63FE3C1DF2B23400352155 /* GarageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageCell.swift; sourceTree = "<group>"; };
 		405F8C9A798E1111DDB15B7E /* Pods-kitt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kitt.release.xcconfig"; path = "Pods/Target Support Files/Pods-kitt/Pods-kitt.release.xcconfig"; sourceTree = "<group>"; };
 		6E6CA5C40146E50D54A48DD7 /* Pods_kittTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kittTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2468641DEE3A8C0066F46F /* kitt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kitt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				1B63FE361DF29F1200352155 /* SeparatorView.swift */,
+				1B63FE3C1DF2B23400352155 /* GarageCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				1B63FE331DF29BDA00352155 /* LoginVC.swift */,
+				1B63FE3A1DF2B1C800352155 /* GarageVC.swift */,
 				AB6E055F1DEE3C65001A3BE8 /* Base */,
 			);
 			name = Controller;
@@ -402,10 +408,12 @@
 			files = (
 				AB6E05631DEE3D1F001A3BE8 /* Model.swift in Sources */,
 				1B63FE391DF2A24A00352155 /* Extensions.swift in Sources */,
+				1B63FE3D1DF2B23400352155 /* GarageCell.swift in Sources */,
 				AB2468681DEE3A8C0066F46F /* AppDelegate.swift in Sources */,
 				1B63FE371DF29F1200352155 /* SeparatorView.swift in Sources */,
 				1B63FE341DF29BDA00352155 /* LoginVC.swift in Sources */,
 				AB6E05611DEE3C91001A3BE8 /* BaseVC.swift in Sources */,
+				1B63FE3B1DF2B1C800352155 /* GarageVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

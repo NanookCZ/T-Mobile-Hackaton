@@ -25,11 +25,14 @@ PODS:
   - OHHTTPStubs/OHPathHelpers (5.2.2)
   - OHHTTPStubs/Swift (5.2.2):
     - OHHTTPStubs/Core
+  - pop (1.0.9)
   - SwiftWebSocket (2.6.5)
   - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
+  - Alamofire
   - MojioSDK (from `https://github.com/mojio/mojio-ios-sdk`, branch `swift3`)
+  - pop
 
 EXTERNAL SOURCES:
   MojioSDK:
@@ -47,9 +50,10 @@ SPEC CHECKSUMS:
   MojioSDK: 7e2927ab0f617021f7d593286a925c22be2e1be1
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
   OHHTTPStubs: 34d9d0994e64fcf8552dbfade5ce82ada913ee31
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SwiftWebSocket: 1ef8a0efb023544643bdf480c1ec4a62b204f293
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 95dd6775a17a1363d79932b2e2661dbd3deb016b
+PODFILE CHECKSUM: 5529920a292679680c693a832536fa201a2e6ee3
 
 COCOAPODS: 1.1.1
