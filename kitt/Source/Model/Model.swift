@@ -49,6 +49,7 @@ class Model {
         authClient.login(username, password: password, completion: { token in
             self.authClient.saveAuthToken(token)
             success()
+            self.initGasStations()
         }, failure: { error in
             failure(.WrongCredentials)
         })
@@ -149,6 +150,15 @@ class Model {
         }
     }
     
+    private func initGasStations() {
+        
+        gasStations(success: { (dictionary) in
+            print(dictionary)
+        }, failure: { error in
+            print(error)
+        })
+        
+    }
     
 }
 
