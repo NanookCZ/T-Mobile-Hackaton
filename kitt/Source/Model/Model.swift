@@ -21,6 +21,9 @@ class Model {
         return RestClient(clientEnvironment: ClientEnvironment.SharedInstance)
     }
     
+    // MARK: Public properties
+    var selectedCar: Vehicle?
+    
     // MARK: Class private constructor
     private init() {
         
@@ -51,10 +54,10 @@ class Model {
         
     }
     
-    public func userCars(success: ([Vehicle]) -> Void, failure: @escaping (ModelError) -> Void) {
+    public func userCars(success: @escaping ([Vehicle]) -> Void, failure: @escaping (ModelError) -> Void) {
         
         restClient.get().vehicles(nil).run({ (vehicles) in
-            print(vehicles)
+            success(vehicles as? [Vehicle] ?? [])
         }, failure: { error in
             failure(self.parsedError(error: error))
         }

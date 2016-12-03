@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.0.1)
+  - AlamofireImage (3.1.0):
+    - Alamofire (~> 4.0)
   - KeychainSwift (7.0.0)
   - MojioSDK (2.0.0):
     - Alamofire
@@ -31,6 +33,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireImage
   - MojioSDK (from `https://github.com/mojio/mojio-ios-sdk`, branch `swift3`)
   - pop
 
@@ -46,6 +49,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireImage: bb8c8351c51cb1633bb6be69b6dbbaff37ce65b7
   KeychainSwift: b6947435dd78cc442c64a84ae648dd0e871cf448
   MojioSDK: 7e2927ab0f617021f7d593286a925c22be2e1be1
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
@@ -54,6 +58,6 @@ SPEC CHECKSUMS:
   SwiftWebSocket: 1ef8a0efb023544643bdf480c1ec4a62b204f293
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 5529920a292679680c693a832536fa201a2e6ee3
+PODFILE CHECKSUM: e97789dce8e842f130d33844981f9057f11d087b
 
 COCOAPODS: 1.1.1

@@ -8,7 +8,7 @@
 
 import UIKit
 import MojioSDK
-
+import AlamofireImage
 
 class GarageCell: UITableViewCell {
     
@@ -22,12 +22,17 @@ class GarageCell: UITableViewCell {
         super.awakeFromNib()
         background.layer.cornerRadius = 5.0
         background.clipsToBounds = true
-        self.layer.cornerRadius = 5.0
-        self.clipsToBounds = true
+        layer.cornerRadius = 5.0
+        clipsToBounds = true
     }
     
     func configureCell(car: Vehicle) {
-        
+        if let url = URL(string: car.VehicleImage?.Normal ?? "") {
+            carImage.af_setImage(withURL: url)
+        }
+        name.text = car.Name
+        vin.text = car.VIN
+        lastUsed.text = car.LastModified
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
