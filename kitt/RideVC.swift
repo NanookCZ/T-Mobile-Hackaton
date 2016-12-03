@@ -27,6 +27,15 @@ class RideVC: UIViewController {
     @IBOutlet var lblNearestService: UILabel!
     @IBOutlet var lblNearestMeters: UILabel!
     
+    @IBOutlet var lblFuelLevel: UILabel!
+    @IBOutlet var lblFuelType: UILabel!
+    @IBOutlet var lblNearestStation: UILabel!
+    @IBOutlet var lblStationPrice: UILabel!
+    
+    @IBOutlet var lblEstimate: UILabel!
+    @IBOutlet var lblCurrentConsumption: UILabel!
+    @IBOutlet var effectiveTanking: UILabel!
+    @IBOutlet var totalPrice: UILabel!
     
     var car: Vehicle? {
         didSet {
@@ -39,6 +48,8 @@ class RideVC: UIViewController {
                 lblNearestMeters.text = "134 m"
                 lblOilState.text = car.VehicleBattery?.RiskSeverity
                 lblOilAmount.text = "\(car.VehicleBattery?.Value ?? 0.0 / 1000) V"
+                
+                lblCurrentConsumption.text = String(describing: car.VehicleFuelEfficiency?.Value)
             }
         }
     }
@@ -54,6 +65,7 @@ class RideVC: UIViewController {
         lblThirdSubtitle.text = "errors"
         
         lblNearestService.text = "Nearest service"
+        lblNearestStation.text = "Nearest station"
     }
 
     
