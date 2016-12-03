@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7471e03-6e97-464c-9782-abd256ba1047" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kitt/MenuVC.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kitt.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/kitt.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kitt/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/kitt/Base.lproj/Main.storyboard" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kitt/GarageVC.swift" afterPath="$PROJECT_DIR$/kitt/GarageVC.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kitt/Source/Model/Model.swift" afterPath="$PROJECT_DIR$/kitt/Source/Model/Model.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -138,7 +135,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="22" width="1400" height="834" extended-state="1" />
+    <frame x="4" y="22" width="1400" height="834" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />

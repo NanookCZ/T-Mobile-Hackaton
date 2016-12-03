@@ -24,8 +24,7 @@ class Model {
     // MARK: Class private constructor
     private init() {
         
-        authClient = AuthClient(clientId: "0b655654-4021-43d3-b556-5da5f8ec4d90", clientSecretKey: "fbb2113a-9260-4c4a-8be3-2e0e7573a6f9", clientRedirectURI: "app://asdf")
-        
+        authClient = AuthClient(clientId: "ca868b91-507c-4ed5-aef3-c78b36a1143d", clientSecretKey: "5d4906e4-b453-45b2-ba81-f65911bae181", clientRedirectURI: "app://asdf")
     }
     
     // MARK: Public functions
@@ -42,7 +41,6 @@ class Model {
         }, failure: { error in
             failure(.WrongCredentials)
         })
-        
     }
     
     public func logout() {
@@ -51,10 +49,11 @@ class Model {
         
     }
     
-    public func userCars(success: ([Vehicle]) -> Void, failure: @escaping (ModelError) -> Void) {
+    public func userCars(success: @escaping ([Vehicle]) -> Void, failure: @escaping (ModelError) -> Void) {
         
         restClient.get().vehicles(nil).run({ (vehicles) in
             print(vehicles)
+            success(vehicles as! [Vehicle])
         }, failure: { error in
             failure(self.parsedError(error: error))
         }
@@ -62,10 +61,11 @@ class Model {
         
     }
     
-    public func userInfo(success: (User) -> Void, failure: @escaping (ModelError) -> Void) {
+    public func userInfo(success: @escaping (User) -> Void, failure: @escaping (ModelError) -> Void) {
         
         restClient.get().me().run({ (user) in
             print(user)
+            success(user as! User)
         }, failure: { error in
             failure(self.parsedError(error: error))
         })

@@ -19,8 +19,12 @@ class GarageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         
         Model.instance.userCars(success: { (vehicles) in
+            
             self.cars = vehicles
+            self.tableView.reloadData()
+            
         }, failure: { error in
+            
             self.showAlert(title: "Error", message: error.localizedDescription())
         })
     }
@@ -30,12 +34,12 @@ class GarageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 //cars.count
+        return cars.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "garageCell", for: indexPath) as! GarageCell
-        //cell.configureCell(car: cars[indexPath.row])
+        cell.configureCell(car: cars[indexPath.row])
         cell.selectionStyle = .none
         return cell
     }

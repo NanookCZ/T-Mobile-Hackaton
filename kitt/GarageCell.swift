@@ -27,7 +27,13 @@ class GarageCell: UITableViewCell {
     }
     
     func configureCell(car: Vehicle) {
+        if let img = car.VehicleImage {
+            print(img)
+        }
         
+        name.text = car.Name
+        vin.text = car.VIN
+        lastUsed.text = car.LastContactTime        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
