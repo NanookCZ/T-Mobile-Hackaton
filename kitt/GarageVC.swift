@@ -16,7 +16,8 @@ class GarageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var cars = [Vehicle]()
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1    }
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1 //cars.count
@@ -41,5 +42,4 @@ class GarageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-    
 }

@@ -18,7 +18,9 @@
 		1BAA8DE01DF2CFF500643DC8 /* RideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA8DDF1DF2CFF500643DC8 /* RideVC.swift */; };
 		1BAA8DE21DF2D00500643DC8 /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA8DE11DF2D00500643DC8 /* UsersVC.swift */; };
 		1BAA8DE41DF2D01700643DC8 /* StateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA8DE31DF2D01700643DC8 /* StateVC.swift */; };
-		1BAA8DE61DF2D02500643DC8 /* ConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA8DE51DF2D02500643DC8 /* ConfigVC.swift */; };
+		1BAA8DE81DF2E4EA00643DC8 /* GarageCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA8DE71DF2E4EA00643DC8 /* GarageCollCell.swift */; };
+		1BAA8DEA1DF2E67D00643DC8 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA8DE91DF2E67D00643DC8 /* UserCell.swift */; };
+		1BAA8DEC1DF2F45F00643DC8 /* MyCarsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA8DEB1DF2F45F00643DC8 /* MyCarsVC.swift */; };
 		AB2468681DEE3A8C0066F46F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2468671DEE3A8C0066F46F /* AppDelegate.swift */; };
 		AB24686D1DEE3A8C0066F46F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB24686B1DEE3A8C0066F46F /* Main.storyboard */; };
 		AB24686F1DEE3A8C0066F46F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB24686E1DEE3A8C0066F46F /* Assets.xcassets */; };
@@ -52,7 +54,9 @@
 		1BAA8DDF1DF2CFF500643DC8 /* RideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideVC.swift; sourceTree = "<group>"; };
 		1BAA8DE11DF2D00500643DC8 /* UsersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
 		1BAA8DE31DF2D01700643DC8 /* StateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateVC.swift; sourceTree = "<group>"; };
-		1BAA8DE51DF2D02500643DC8 /* ConfigVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigVC.swift; sourceTree = "<group>"; };
+		1BAA8DE71DF2E4EA00643DC8 /* GarageCollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageCollCell.swift; sourceTree = "<group>"; };
+		1BAA8DE91DF2E67D00643DC8 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		1BAA8DEB1DF2F45F00643DC8 /* MyCarsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCarsVC.swift; sourceTree = "<group>"; };
 		405F8C9A798E1111DDB15B7E /* Pods-kitt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kitt.release.xcconfig"; path = "Pods/Target Support Files/Pods-kitt/Pods-kitt.release.xcconfig"; sourceTree = "<group>"; };
 		6E6CA5C40146E50D54A48DD7 /* Pods_kittTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kittTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2468641DEE3A8C0066F46F /* kitt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kitt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +100,9 @@
 			children = (
 				1B63FE361DF29F1200352155 /* SeparatorView.swift */,
 				1B63FE3C1DF2B23400352155 /* GarageCell.swift */,
+				1BAA8DE71DF2E4EA00643DC8 /* GarageCollCell.swift */,
 				1BAA8DDD1DF2C9E000643DC8 /* MenuCell.swift */,
+				1BAA8DE91DF2E67D00643DC8 /* UserCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -175,12 +181,12 @@
 			isa = PBXGroup;
 			children = (
 				1B63FE331DF29BDA00352155 /* LoginVC.swift */,
-				1B63FE3A1DF2B1C800352155 /* GarageVC.swift */,
 				1B63FE3E1DF2BEEB00352155 /* MenuVC.swift */,
+				1B63FE3A1DF2B1C800352155 /* GarageVC.swift */,
 				1BAA8DDF1DF2CFF500643DC8 /* RideVC.swift */,
 				1BAA8DE11DF2D00500643DC8 /* UsersVC.swift */,
 				1BAA8DE31DF2D01700643DC8 /* StateVC.swift */,
-				1BAA8DE51DF2D02500643DC8 /* ConfigVC.swift */,
+				1BAA8DEB1DF2F45F00643DC8 /* MyCarsVC.swift */,
 				AB6E05651DF2B225001A3BE8 /* NotificationVC.swift */,
 				AB6E055F1DEE3C65001A3BE8 /* Base */,
 			);
@@ -278,7 +284,7 @@
 				TargetAttributes = {
 					AB2468631DEE3A8C0066F46F = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = CG63ZWPD86;
+						DevelopmentTeam = UERQU83HKF;
 						ProvisioningStyle = Automatic;
 					};
 					AB2468771DEE3A8C0066F46F = {
@@ -427,17 +433,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB6E05631DEE3D1F001A3BE8 /* Model.swift in Sources */,
+				1BAA8DEC1DF2F45F00643DC8 /* MyCarsVC.swift in Sources */,
 				1B63FE391DF2A24A00352155 /* Extensions.swift in Sources */,
 				1B63FE3D1DF2B23400352155 /* GarageCell.swift in Sources */,
 				AB2468681DEE3A8C0066F46F /* AppDelegate.swift in Sources */,
-				1BAA8DE61DF2D02500643DC8 /* ConfigVC.swift in Sources */,
 				ABD90A911DF2D3B700167006 /* BaseVC.swift in Sources */,
 				1BAA8DE01DF2CFF500643DC8 /* RideVC.swift in Sources */,
 				1B63FE371DF29F1200352155 /* SeparatorView.swift in Sources */,
+				1BAA8DEA1DF2E67D00643DC8 /* UserCell.swift in Sources */,
 				1B63FE3F1DF2BEEB00352155 /* MenuVC.swift in Sources */,
 				1BAA8DDE1DF2C9E000643DC8 /* MenuCell.swift in Sources */,
 				1B63FE341DF29BDA00352155 /* LoginVC.swift in Sources */,
 				1B63FE3B1DF2B1C800352155 /* GarageVC.swift in Sources */,
+				1BAA8DE81DF2E4EA00643DC8 /* GarageCollCell.swift in Sources */,
 				1BAA8DE21DF2D00500643DC8 /* UsersVC.swift in Sources */,
 				1BAA8DE41DF2D01700643DC8 /* StateVC.swift in Sources */,
 			);
@@ -579,7 +587,7 @@
 			baseConfigurationReference = C291A29DAF356823BF3A6963 /* Pods-kitt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CG63ZWPD86;
+				DEVELOPMENT_TEAM = UERQU83HKF;
 				INFOPLIST_FILE = kitt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.marikond.kitt;
@@ -593,7 +601,7 @@
 			baseConfigurationReference = 405F8C9A798E1111DDB15B7E /* Pods-kitt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CG63ZWPD86;
+				DEVELOPMENT_TEAM = UERQU83HKF;
 				INFOPLIST_FILE = kitt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.marikond.kitt;
