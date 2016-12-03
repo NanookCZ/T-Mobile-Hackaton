@@ -60,9 +60,9 @@ class RideVC: UIViewController {
         // Do any additional setup after loading the view.
         containerView.layer.cornerRadius = 5.0
         
-        lblFirstSubtitle.text = "avg speed"
-        lblSecondSubtitle.text = "l fuel"
-        lblThirdSubtitle.text = "errors"
+        lblFirstSubtitle.text = "Avg speed"
+        lblSecondSubtitle.text = "Fuel/l"
+        lblThirdSubtitle.text = "Errors"
         
         lblNearestService.text = "Nearest service"
         lblNearestStation.text = "Nearest station"

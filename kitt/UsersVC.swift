@@ -10,26 +10,36 @@ import UIKit
 
 class UsersVC: UIViewController {
 
+    @IBOutlet weak var bgView: UIView!
+
+    @IBOutlet weak var integrations: UILabel!
+    @IBOutlet weak var km: UILabel!
+    @IBOutlet weak var rides: UILabel!
+    
+    @IBOutlet weak var twisto: UISwitch!
+    @IBAction func twistoAction(_ sender: UISwitch) {
+    }
+
+    @IBOutlet weak var wifi: UISwitch!
+    @IBAction func wifiAction(_ sender: UISwitch) {
+    }
+
+    @IBOutlet weak var spotify: UISwitch!
+    @IBAction func spotifyAction(_ sender: UISwitch) {
+    }
+
+    @IBOutlet weak var shareRide: UISwitch!
+    @IBAction func shareRideAction(_ sender: UISwitch) {
+    }
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        bgView.layer.cornerRadius = 5.0
+        bgView.clipsToBounds = true
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
