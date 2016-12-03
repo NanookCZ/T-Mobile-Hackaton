@@ -26,7 +26,7 @@ class Model {
     // MARK: Class private constructor
     private init() {
         
-        authClient = AuthClient(clientId: "0b655654-4021-43d3-b556-5da5f8ec4d90", clientSecretKey: "fbb2113a-9260-4c4a-8be3-2e0e7573a6f9", clientRedirectURI: "https://margetova.eu")
+        authClient = AuthClient(clientId: "9dfe8d0a-6ac3-49a8-9c85-6156145e2ed5", clientSecretKey: "916e92e9-96bc-449f-aca6-173f3d46332e", clientRedirectURI: "https://margetova.eu")
         
     }
     
@@ -104,7 +104,7 @@ class Model {
     }
     
     // Weather
-    public func getCurrentWeather(location: CLLocation, success: ([String : AnyObject]) -> Void, failure: (ModelError) -> Void) {
+    public func currentWeather(location: CLLocation, success: ([String : AnyObject]) -> Void, failure: (ModelError) -> Void) {
         
         let parameters = ["key":"39e772ad39c34c81afa113737160212",
                           "q":"\(location.coordinate.latitude),\(location.coordinate.longitude)"]
@@ -113,6 +113,18 @@ class Model {
         .validate()
         .responseJSON { (response) in
             print(response)
+        }
+        
+    }
+    
+    public func incidentsInLocation(corner1: CLLocation, corner2: CLLocation, success: ([String : AnyObject]) -> Void, failure: (ModelError) -> Void) {
+        
+        let parameters = ["key":"AuwECp1VPpdEviDCTCDAbx1SzwA2qM_-YWpU5gbQXLJ9WL-zZjrUga2Q0BZ6k-Pu"]
+        
+        Alamofire.request("https://dev.virtualearth.net/REST/v1/Traffic/Incidents/\(corner1.coordinate.latitude),\(corner1.coordinate.longitude),\(corner2.coordinate.latitude),\(corner2.coordinate.longitude)", method: .get, parameters: parameters)
+            .validate()
+            .responseJSON { (response) in
+                print(response)
         }
         
     }
