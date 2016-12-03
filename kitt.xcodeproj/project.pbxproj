@@ -104,7 +104,6 @@
 		AB16D2681DEE3B9700E4DB43 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				1B63FE351DF29EFD00352155 /* View */,
 				AB6E055E1DEE3C25001A3BE8 /* Controller */,
 				AB6E055D1DEE3C1F001A3BE8 /* Model */,
 			);
@@ -142,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				AB16D2681DEE3B9700E4DB43 /* Source */,
+				1B63FE351DF29EFD00352155 /* View */,
 				AB16D2691DEE3B9D00E4DB43 /* Resources */,
 				AB2468671DEE3A8C0066F46F /* AppDelegate.swift */,
 				AB24686B1DEE3A8C0066F46F /* Main.storyboard */,
