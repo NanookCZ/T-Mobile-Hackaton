@@ -41,8 +41,11 @@ class GarageCollCell: UICollectionViewCell, UITableViewDataSource {
         if let url = URL(string: car.VehicleImage?.Normal ?? "") {
             carImage.af_setImage(withURL: url)
         }
-        year.text = car.CreatedOn
-        distance.text = (String(describing: car.VehicleOdometer?.Value ?? 0.0)) + (car.VehicleOdometer?.Unit ?? "")
+        if let date = Model.instance.dateFormatter.date(from: car.CreatedOn ?? "") {
+            let yearComponent = Calendar.current.component(.year, from: date)
+            year.text = String(yearComponent)
+        }
+        distance.text = String((describing: car.VehicleOdometer?.Value ?? 0.0) / 1000.0)
     }
 
     @IBAction func selectButtonAction(_ sender: UIButton) {

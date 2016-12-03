@@ -25,10 +25,14 @@ class Model {
     var currentCars: [Vehicle]?
     var selectedCar: Vehicle?
     
+    var dateFormatter: DateFormatter = DateFormatter()
+    
     // MARK: Class private constructor
     private init() {
         
         authClient = AuthClient(clientId: "0b655654-4021-43d3-b556-5da5f8ec4d90", clientSecretKey: "fbb2113a-9260-4c4a-8be3-2e0e7573a6f9", clientRedirectURI: "app://asdf")
+        
+        DateFormatter.dateFormat(fromTemplate: "yyyy-MM-dd'T'HH:mm:ss.SSSZ", options: 0, locale: Locale.current)
         
     }
     
