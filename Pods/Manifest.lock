@@ -29,7 +29,6 @@ PODS:
   - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
-  - Alamofire
   - MojioSDK (from `https://github.com/mojio/mojio-ios-sdk`, branch `swift3`)
 
 EXTERNAL SOURCES:
@@ -51,6 +50,6 @@ SPEC CHECKSUMS:
   SwiftWebSocket: 1ef8a0efb023544643bdf480c1ec4a62b204f293
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: fcc054df4b73983050ded0edb8190fb19da12d46
+PODFILE CHECKSUM: 95dd6775a17a1363d79932b2e2661dbd3deb016b
 
 COCOAPODS: 1.1.1

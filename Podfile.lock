@@ -29,7 +29,6 @@ PODS:
   - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
-  - Alamofire
   - MojioSDK (from `https://github.com/mojio/mojio-ios-sdk`, branch `swift3`)
 
 EXTERNAL SOURCES:
