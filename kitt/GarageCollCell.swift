@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MojioSDK
 
 protocol GarageCollCellDelegate {
     func didSelectCar(index: IndexPath)
@@ -34,8 +35,14 @@ class GarageCollCell: UICollectionViewCell, UITableViewDataSource {
         selectButton.clipsToBounds = true
     }
     
-    func configureCell(car: String, index: IndexPath) {
+    func configureCell(car: Vehicle, index: IndexPath) {
         self.index = index
+        
+        if let url = URL(string: car.VehicleImage?.Normal ?? "") {
+            carImage.af_setImage(withURL: url)
+        }
+        year.text = car.CreatedOn
+        distance.text = (String(describing: car.VehicleOdometer?.Value ?? 0.0)) + (car.VehicleOdometer?.Unit ?? "")
     }
 
     @IBAction func selectButtonAction(_ sender: UIButton) {

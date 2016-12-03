@@ -27,13 +27,12 @@ class GarageCell: UITableViewCell {
     }
     
     func configureCell(car: Vehicle) {
-        if let img = car.VehicleImage {
-            print(img)
+        if let url = URL(string: car.VehicleImage?.Normal ?? "") {
+            carImage.af_setImage(withURL: url)
         }
-        
         name.text = car.Name
         vin.text = car.VIN
-        lastUsed.text = car.LastContactTime        
+        lastUsed.text = car.LastModified
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

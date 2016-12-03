@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import MojioSDK
 
 class MyCarsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, GarageCollCellDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
 
+    var cars: [Vehicle] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cars = Model.instance.currentCars ?? []
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -21,12 +26,12 @@ class MyCarsVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return cars.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "garageCell", for: indexPath) as! GarageCollCell
-//        cell.configureCell(car: "hello", index: indexPath)
+        cell.configureCell(car: cars[indexPath.row], index: indexPath)
         cell.delegate = self
         return cell
     }
