@@ -67,10 +67,10 @@ class Model {
         
     }
     
-    public func userInfo(success: (User) -> Void, failure: @escaping (ModelError) -> Void) {
+    public func userInfo(success: @escaping (User) -> Void, failure: @escaping (ModelError) -> Void) {
         
         restClient.get().me().run({ (user) in
-            print(user)
+            success(user as! User)
         }, failure: { error in
             failure(self.parsedError(error: error))
         })

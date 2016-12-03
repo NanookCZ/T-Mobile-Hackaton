@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import MojioSDK
 
 class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var selectedCar: String?
-    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var name: UILabel!
     
+    var selectedCar: Vehicle?
     let menuItems = ["My garage", "Car state", "Ride", "Users"]
     let menuIcons = ["MyGarage", "CarState", "CarRide", "Users"]
     
@@ -27,15 +28,14 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         navigationController?.navigationBar.backgroundColor = UIColor.clear
         navigationController?.navigationBar.shadowImage = UIImage()
         
-        print(selectedCar ?? "nic")
-        
         tableView.layer.cornerRadius = 5.0
         tableView.clipsToBounds = true
         
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.view.backgroundColor = UIColor.clear
-        navigationController?.navigationBar.backgroundColor = UIColor.clear
-        navigationController?.navigationBar.shadowImage = UIImage()
+        if let selectedCar = Model.instance.selectedCar {
+            self.selectedCar = selectedCar
+            self.name.text = selectedCar.Name
+        }
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -68,6 +68,8 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         default:
             break
         }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
