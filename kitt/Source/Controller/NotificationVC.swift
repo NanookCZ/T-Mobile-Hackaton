@@ -62,11 +62,11 @@ enum MessageType {
     var image: UIImage? {
         switch self {
         case .Stop(_, _, _):
-            return UIImage(named: "")
+            return UIImage(named: "stop")
         case .Power:
-            return UIImage(named: "")
+            return UIImage(named: "stop")
         case .Lock:
-            return UIImage(named: "")
+            return UIImage(named: "lock")
         case .Spotify:
             return UIImage(named: "spotify")
         }
