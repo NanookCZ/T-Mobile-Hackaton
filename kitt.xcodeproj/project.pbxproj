@@ -28,6 +28,7 @@
 		AB24687D1DEE3A8C0066F46F /* kittTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24687C1DEE3A8C0066F46F /* kittTests.swift */; };
 		AB6E05631DEE3D1F001A3BE8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E05621DEE3D1F001A3BE8 /* Model.swift */; };
 		ABD90A911DF2D3B700167006 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD90A901DF2D3B700167006 /* BaseVC.swift */; };
+		ABD90A931DF34B5700167006 /* GasStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD90A921DF34B5700167006 /* GasStation.swift */; };
 		DEDC176E909428AB4B47D113 /* Pods_kittTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6CA5C40146E50D54A48DD7 /* Pods_kittTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		AB6E05621DEE3D1F001A3BE8 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Source/Model/Model.swift; sourceTree = "<group>"; };
 		AB6E05651DF2B225001A3BE8 /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationVC.swift; path = Source/Controller/NotificationVC.swift; sourceTree = "<group>"; };
 		ABD90A901DF2D3B700167006 /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseVC.swift; path = Source/Controller/BaseVC.swift; sourceTree = "<group>"; };
+		ABD90A921DF34B5700167006 /* GasStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GasStation.swift; path = Source/Model/Entities/GasStation.swift; sourceTree = "<group>"; };
 		C291A29DAF356823BF3A6963 /* Pods-kitt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kitt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kitt/Pods-kitt.debug.xcconfig"; sourceTree = "<group>"; };
 		CBE19CE4D82D34B5D283CA67 /* Pods_kitt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kitt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -204,6 +206,7 @@
 		AB6E05641DEE3D23001A3BE8 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				ABD90A921DF34B5700167006 /* GasStation.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				AB2468681DEE3A8C0066F46F /* AppDelegate.swift in Sources */,
 				ABD90A911DF2D3B700167006 /* BaseVC.swift in Sources */,
 				1BAA8DE01DF2CFF500643DC8 /* RideVC.swift in Sources */,
+				ABD90A931DF34B5700167006 /* GasStation.swift in Sources */,
 				1B63FE371DF29F1200352155 /* SeparatorView.swift in Sources */,
 				1BAA8DEA1DF2E67D00643DC8 /* UserCell.swift in Sources */,
 				1B63FE3F1DF2BEEB00352155 /* MenuVC.swift in Sources */,

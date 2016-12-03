@@ -25,10 +25,10 @@ class GarageCollCell: UICollectionViewCell, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
 
     @IBOutlet weak var bgView: UIView!
-    
+
     var index: IndexPath?
     var carUsers = [User]()
-    
+
     
     override func awakeFromNib() {
         tableView.dataSource = self
@@ -43,23 +43,23 @@ class GarageCollCell: UICollectionViewCell, UITableViewDataSource {
     func configureCell(car: Vehicle, index: IndexPath) {
         self.index = index
         createAnotherUser()
-        
+
         if let url = URL(string: car.VehicleImage?.Normal ?? "") {
             carImage.af_setImage(withURL: url)
         }
         year.text = car.CreatedOn
         distance.text = (String(describing: car.VehicleOdometer?.Value ?? 0.0)) + (car.VehicleOdometer?.Unit ?? "")
-        
+
         if let userId = car.Id {
             getUserDetails(userId: userId)
         }
     }
-    
+
     func createAnotherUser() {
         let newUser = User()
         newUser.FirstName = "Dalibor"
         newUser.LastName = "Kozak"
-        
+
         let image = Image()
         image.Src = "https://images.moj.io/v2/images/23d3637c-6d5a-4c7a-9840-2f492eddb0c9.jpeg"
         image.Normal = "https://images.moj.io/v2/images/23d3637c-6d5a-4c7a-9840-2f492eddb0c9.jpeg?w=1280&h=720"
@@ -69,7 +69,7 @@ class GarageCollCell: UICollectionViewCell, UITableViewDataSource {
         newUser.Id = "ef3ab3c6-137b-48db-a126-4ddb849c7203"
         self.carUsers.append(newUser)
     }
-    
+
     func getUserDetails(userId: String) {
         Model.instance.userInfo(success: { (user) in
             self.carUsers.append(user)
@@ -77,6 +77,11 @@ class GarageCollCell: UICollectionViewCell, UITableViewDataSource {
         }, failure: { (error) in
             print(error)
         })
+        if let date = Model.instance.dateFormatter.date(from: car.CreatedOn ?? "") {
+            let yearComponent = Calendar.current.component(.year, from: date)
+            year.text = String(yearComponent)
+        }
+        distance.text = String((describing: car.VehicleOdometer?.Value ?? 0.0) / 1000.0)
     }
 
     @IBAction func selectButtonAction(_ sender: UIButton) {

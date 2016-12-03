@@ -1501,9 +1501,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OME-sr-uJ5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Un-OJ-Kgt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6Un-OJ-Kgt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

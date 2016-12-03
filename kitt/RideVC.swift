@@ -41,15 +41,21 @@ class RideVC: UIViewController {
         didSet {
             if let car = car {
                 
-                lblFirst.text = String(describing: car.VehicleSpeed?.Value)
-                lblSecond.text = String(describing: car.VehicleFuelVolume?.Value)
+                if let url = URL(string: car.VehicleImage?.Normal ?? "") {
+                    imgCar.af_setImage(withURL: url)
+                }
+                
+                lblFirst.text = String(describing: car.VehicleSpeed?.Value ?? 0.0)
+                lblSecond.text = String(describing: car.VehicleFuelEfficiency?.Value ?? 0.0)
                 lblThird.text = String(describing: car.DiagnosticCodes.count)
                 
                 lblNearestMeters.text = "134 m"
-                lblOilState.text = car.VehicleBattery?.RiskSeverity
+                lblOilState.text = (car.VehicleBattery?.RiskSeverity ?? "") + " Risk"
                 lblOilAmount.text = "\(car.VehicleBattery?.Value ?? 0.0 / 1000) V"
                 
-                lblCurrentConsumption.text = String(describing: car.VehicleFuelEfficiency?.Value)
+                lblFuelLevel.text = String(describing: car.VehicleFuelVolume?.Value ?? 0.0) + " l fuel level"
+                lblFuelType.text = car.FuelType
+                lblCurrentConsumption.text = String(describing: car.VehicleFuelEfficiency?.Value ?? 0.0) + " l/100km"
             }
         }
     }
@@ -57,6 +63,8 @@ class RideVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        car = Model.instance.selectedCar
+        
         // Do any additional setup after loading the view.
         containerView.layer.cornerRadius = 5.0
         
