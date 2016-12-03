@@ -10,10 +10,13 @@ import UIKit
 
 class RideVC: UIViewController {
 
+    @IBOutlet var containerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        containerView.layer.cornerRadius = 5.0
     }
 
     override func didReceiveMemoryWarning() {

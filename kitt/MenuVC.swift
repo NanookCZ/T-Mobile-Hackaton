@@ -22,6 +22,11 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         // Do any additional setup after loading the view.
         
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.view.backgroundColor = UIColor.clear
+        navigationController?.navigationBar.backgroundColor = UIColor.clear
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
         print(selectedCar ?? "nic")
         
         tableView.layer.cornerRadius = 5.0

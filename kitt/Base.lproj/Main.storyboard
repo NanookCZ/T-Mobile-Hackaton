@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -216,14 +217,13 @@
                             <constraint firstAttribute="trailing" secondItem="6Qc-ku-BxK" secondAttribute="trailing" constant="28" id="1h8-7h-LSS"/>
                             <constraint firstItem="6Qc-ku-BxK" firstAttribute="leading" secondItem="fQe-Hv-hF3" secondAttribute="leading" constant="28" id="434-4G-Tge"/>
                             <constraint firstItem="EJg-zV-WfR" firstAttribute="top" secondItem="6Qc-ku-BxK" secondAttribute="bottom" constant="50" id="4w4-VY-ccN"/>
-                            <constraint firstItem="wEI-jv-N2f" firstAttribute="top" secondItem="bs2-zH-kcw" secondAttribute="bottom" constant="-20" id="57Z-YU-fzc"/>
                             <constraint firstAttribute="trailing" secondItem="wEI-jv-N2f" secondAttribute="trailing" id="Mvz-4q-dzI"/>
                             <constraint firstItem="EJg-zV-WfR" firstAttribute="top" secondItem="wEI-jv-N2f" secondAttribute="bottom" id="bIa-tH-1wz"/>
                             <constraint firstItem="wEI-jv-N2f" firstAttribute="leading" secondItem="fQe-Hv-hF3" secondAttribute="leading" id="mJX-fi-hpt"/>
+                            <constraint firstItem="wEI-jv-N2f" firstAttribute="top" secondItem="fQe-Hv-hF3" secondAttribute="top" id="p3h-em-6Gv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ycU-Pr-Pey"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="6Qc-ku-BxK" id="q7z-iu-Z6s"/>
                         <segue destination="uGl-UW-szh" kind="show" id="vjS-qy-WFq"/>
@@ -248,12 +248,45 @@
                     <view key="view" contentMode="scaleToFill" id="7OJ-H8-T6c" customClass="r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="GwE-mF-VpB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VcT-4P-bpf">
+                                <rect key="frame" x="18.5" y="72" width="337.5" height="240"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ut-ST-gca">
+                                        <rect key="frame" x="0.0" y="0.0" width="338" height="167"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YH7-eH-45e" userLabel="SeparatorView">
+                                        <rect key="frame" x="97" y="175" width="3" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="GwE-mF-VpB" secondAttribute="trailing" id="0mD-So-FlS"/>
+                            <constraint firstItem="VcT-4P-bpf" firstAttribute="height" secondItem="7OJ-H8-T6c" secondAttribute="height" multiplier="0.36" id="1tL-gc-6es"/>
+                            <constraint firstItem="GwE-mF-VpB" firstAttribute="top" secondItem="7OJ-H8-T6c" secondAttribute="top" id="2af-Ag-vTK"/>
+                            <constraint firstItem="VcT-4P-bpf" firstAttribute="centerX" secondItem="7OJ-H8-T6c" secondAttribute="centerX" id="3C0-R1-gGL"/>
+                            <constraint firstItem="GwE-mF-VpB" firstAttribute="leading" secondItem="7OJ-H8-T6c" secondAttribute="leading" id="N73-nK-CaX"/>
+                            <constraint firstItem="37N-tI-Hjh" firstAttribute="top" secondItem="GwE-mF-VpB" secondAttribute="bottom" id="N7b-Bg-Xzy"/>
+                            <constraint firstItem="VcT-4P-bpf" firstAttribute="top" secondItem="GaO-ed-POt" secondAttribute="bottom" constant="8" id="NbN-kJ-FDN"/>
+                            <constraint firstItem="VcT-4P-bpf" firstAttribute="width" secondItem="7OJ-H8-T6c" secondAttribute="width" multiplier="0.9" id="Wp2-gl-nBs"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="VcT-4P-bpf" id="dUQ-Ow-TwV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8mH-aL-B9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3902" y="381"/>
+            <point key="canvasLocation" x="3901.5999999999999" y="380.95952023988008"/>
         </scene>
         <!--UsersVC-->
         <scene sceneID="1Af-jg-M3V">
@@ -327,7 +360,7 @@
             </objects>
             <point key="canvasLocation" x="3903" y="-315"/>
         </scene>
-	<!--NotificationVC-->
+        <!--NotificationVC-->
         <scene sceneID="xHi-GB-1iL">
             <objects>
                 <viewController id="MKv-lk-TNg" customClass="NotificationVC" customModule="kitt" customModuleProvider="target" sceneMemberID="viewController">
@@ -511,14 +544,11 @@
         <!--Navigation Controller-->
         <scene sceneID="8O6-pd-9l1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="OME-sr-uJ5" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OME-sr-uJ5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="6Un-OJ-Kgt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6Un-OJ-Kgt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0" green="0.29803921570000003" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.0" green="0.29803921570000003" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -539,7 +569,7 @@
         <image name="bg_jazda" width="750" height="1334"/>
         <image name="carImg" width="648" height="352"/>
         <image name="login_bg" width="750" height="1334"/>
+        <image name="logo" width="578" height="137"/>
         <image name="spotify" width="100" height="100"/>
-	<image name="logo" width="578" height="137"/>
     </resources>
 </document>
