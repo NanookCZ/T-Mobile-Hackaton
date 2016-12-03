@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XXe-II-gPv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XXe-II-gPv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -112,6 +112,79 @@
             </objects>
             <point key="canvasLocation" x="1752.8" y="31.934032983508249"/>
         </scene>
+        <!--NotificationVC-->
+        <scene sceneID="xHi-GB-1iL">
+            <objects>
+                <viewController id="MKv-lk-TNg" customClass="NotificationVC" customModule="kitt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s8O-01-jNe"/>
+                        <viewControllerLayoutGuide type="bottom" id="YPx-eI-LKV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L9E-Js-3kB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_jazda" translatesAutoresizingMaskIntoConstraints="NO" id="mbC-3F-cLK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spotify" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-c6-Su7">
+                                <rect key="frame" x="137" y="330" width="100" height="100"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 km/h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7o-n7-B0P">
+                                <rect key="frame" x="157.5" y="489" width="59.5" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 km/h avg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1T-7G-nx9">
+                                <rect key="frame" x="140.5" y="516" width="94.5" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zpráva" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHC-En-yrU">
+                                <rect key="frame" x="138" y="438" width="99" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUTOMOBIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdQ-eh-LAd">
+                                <rect key="frame" x="134" y="28" width="108.5" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JdQ-eh-LAd" firstAttribute="top" secondItem="s8O-01-jNe" secondAttribute="bottom" constant="8" id="5iA-ak-7AA"/>
+                            <constraint firstItem="eHC-En-yrU" firstAttribute="centerX" secondItem="L9E-Js-3kB" secondAttribute="centerX" id="FSY-qH-Tmt"/>
+                            <constraint firstItem="hmq-c6-Su7" firstAttribute="centerX" secondItem="L9E-Js-3kB" secondAttribute="centerX" id="Ik4-EI-n7Y"/>
+                            <constraint firstItem="YPx-eI-LKV" firstAttribute="top" secondItem="mbC-3F-cLK" secondAttribute="bottom" id="Ks7-cv-JFZ"/>
+                            <constraint firstAttribute="trailing" secondItem="mbC-3F-cLK" secondAttribute="trailing" id="PSs-Zb-3aO"/>
+                            <constraint firstItem="mbC-3F-cLK" firstAttribute="leading" secondItem="L9E-Js-3kB" secondAttribute="leading" id="PUD-U7-6Ne"/>
+                            <constraint firstItem="Y1T-7G-nx9" firstAttribute="centerX" secondItem="L9E-Js-3kB" secondAttribute="centerX" id="Wue-4d-P40"/>
+                            <constraint firstItem="o7o-n7-B0P" firstAttribute="centerX" secondItem="L9E-Js-3kB" secondAttribute="centerX" id="Y7p-8i-1OH"/>
+                            <constraint firstItem="hmq-c6-Su7" firstAttribute="top" secondItem="s8O-01-jNe" secondAttribute="bottom" constant="310" id="YYE-Ut-3g9"/>
+                            <constraint firstItem="Y1T-7G-nx9" firstAttribute="top" secondItem="o7o-n7-B0P" secondAttribute="bottom" constant="4" id="ZD2-GP-RFj"/>
+                            <constraint firstItem="mbC-3F-cLK" firstAttribute="top" secondItem="L9E-Js-3kB" secondAttribute="top" id="i4g-M8-sVu"/>
+                            <constraint firstItem="o7o-n7-B0P" firstAttribute="top" secondItem="eHC-En-yrU" secondAttribute="bottom" constant="12" id="jIj-nE-4W1"/>
+                            <constraint firstItem="eHC-En-yrU" firstAttribute="top" secondItem="hmq-c6-Su7" secondAttribute="bottom" constant="8" id="lRu-WV-gYB"/>
+                            <constraint firstItem="JdQ-eh-LAd" firstAttribute="centerX" secondItem="L9E-Js-3kB" secondAttribute="centerX" id="lvr-PP-Qzf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgNotification" destination="hmq-c6-Su7" id="MEr-lC-vue"/>
+                        <outlet property="lblAverage" destination="Y1T-7G-nx9" id="Jlw-ra-nx3"/>
+                        <outlet property="lblMessage" destination="eHC-En-yrU" id="XIL-x1-jNY"/>
+                        <outlet property="lblSpeed" destination="o7o-n7-B0P" id="qla-Ha-mH8"/>
+                        <outlet property="lblTitle" destination="JdQ-eh-LAd" id="fQG-L3-hTw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jVL-TK-OYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1752.8" y="725.48725637181417"/>
+        </scene>
         <!--LoginVC-->
         <scene sceneID="5ph-Sc-6CU">
             <objects>
@@ -213,7 +286,9 @@
     </scenes>
     <resources>
         <image name="bg" width="750" height="1334"/>
+        <image name="bg_jazda" width="750" height="1334"/>
         <image name="carImg" width="648" height="352"/>
         <image name="login_bg" width="750" height="1334"/>
+        <image name="spotify" width="100" height="100"/>
     </resources>
 </document>
