@@ -10,17 +10,16 @@ import UIKit
 import MojioSDK
 
 class GarageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var cars = [Vehicle]()
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
+        return 1    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 1 //cars.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -28,5 +27,18 @@ class GarageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //cell.configureCell(car: cars[indexPath.row])
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "menuSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "menuSegue" {
+            let navVC = segue.destination as! UINavigationController
+            if let menuVC = navVC.viewControllers.first as? MenuVC {
+                menuVC.selectedCar = "This car"
+            }
+        }
+    }
+    
 }
