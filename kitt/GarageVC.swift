@@ -7,11 +7,26 @@
 //
 
 import UIKit
+import MojioSDK
 
-class GarageVC: UIViewController {
+class GarageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var cars = [Vehicle]()
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "garageCell", for: indexPath) as! GarageCell
+        //cell.configureCell(car: cars[indexPath.row])
+        return cell
+    }
 
 }
