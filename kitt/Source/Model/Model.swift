@@ -25,6 +25,8 @@ class Model {
     var currentCars: [Vehicle]?
     var selectedCar: Vehicle?
     
+    var selectedLocation: CLLocation?
+    
     var dateFormatter: DateFormatter = DateFormatter()
     
     // MARK: Class private constructor
