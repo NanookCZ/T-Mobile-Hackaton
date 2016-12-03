@@ -65,3 +65,38 @@ class AnimatedButton: UIButton {
         self.layer.pop_add(scaleAnim, forKey: "scaleSmall")
     }
 }
+
+extension UIViewController {
+    
+    /**
+     Show alertView with specified properties
+     
+     - Parameters:
+     - title: Text in title
+     - message: Message shown in alert view
+     - actions: Array of alert view actions
+     
+     */
+    func showAlert(title: String?, message: String?, actions: [UIAlertAction]) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        for action in actions {
+            alertController.addAction(action)
+        }
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    /**
+     Show alert view with default single action (OK) - for errors
+     
+     - Parameters:
+     - title: Text in title
+     - message: Message shown in alert view
+     
+     */
+    func showAlert(title: String?, message: String?) {
+        showAlert(title: title, message: message, actions: [UIAlertAction(title: "OK", style: .cancel, handler: nil)])
+    }
+    
+}

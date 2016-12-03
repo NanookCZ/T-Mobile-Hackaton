@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -17,11 +17,34 @@ class LoginVC: UIViewController {
 
     @IBAction func loginButtonAction(_ sender: UIButton) {
         
+        if username.text != nil && username.text != "" && password.text != nil && password.text != "" {
+            
+            Model.instance.login(username: username.text, password: password.text, success: { 
+                self.performSegue(withIdentifier: "toCarSelection", sender: sender)
+            }, failure: { (error) in
+                self.showAlert(title: "Error", message: error.localizedDescription())
+            })
+            
+        } else {
+            showAlert(title: "Error", message: "Please fill in your name and password")
+        }
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == username {
+            password.becomeFirstResponder()
+        } else if textField == password {
+            loginButtonAction(loginButton)
+        }
+        
+        return true
     }
 
     func configureUI() {
