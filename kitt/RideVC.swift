@@ -7,32 +7,55 @@
 //
 
 import UIKit
+import MojioSDK
 
 class RideVC: UIViewController {
 
     @IBOutlet var containerView: UIView!
+    @IBOutlet var imgCar: UIImageView!
+    
+    @IBOutlet var lblFirst: UILabel!
+    @IBOutlet var lblSecond: UILabel!
+    @IBOutlet var lblThird: UILabel!
+    
+    @IBOutlet var lblFirstSubtitle: UILabel!
+    @IBOutlet var lblSecondSubtitle: UILabel!
+    @IBOutlet var lblThirdSubtitle: UILabel!
+    
+    @IBOutlet var lblOilState: UILabel!
+    @IBOutlet var lblOilAmount: UILabel!
+    @IBOutlet var lblNearestService: UILabel!
+    @IBOutlet var lblNearestMeters: UILabel!
+    
+    
+    var car: Vehicle? {
+        didSet {
+            if let car = car {
+                
+                lblFirst.text = String(describing: car.VehicleSpeed?.Value)
+                lblSecond.text = String(describing: car.VehicleFuelVolume?.Value)
+                lblThird.text = String(describing: car.DiagnosticCodes.count)
+                
+                lblNearestMeters.text = "134 m"
+                lblOilState.text = car.VehicleBattery?.RiskSeverity
+                lblOilAmount.text = "\(car.VehicleBattery?.Value ?? 0.0 / 1000) V"
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         containerView.layer.cornerRadius = 5.0
+        
+        lblFirstSubtitle.text = "avg speed"
+        lblSecondSubtitle.text = "l fuel"
+        lblThirdSubtitle.text = "errors"
+        
+        lblNearestService.text = "Nearest service"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
