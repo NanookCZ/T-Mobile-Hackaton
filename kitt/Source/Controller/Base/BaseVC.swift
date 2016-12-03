@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class BaseVC: UIViewController {
 
@@ -14,6 +15,7 @@ class BaseVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
     
     
