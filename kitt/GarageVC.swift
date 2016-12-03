@@ -25,6 +25,7 @@ class GarageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "garageCell", for: indexPath) as! GarageCell
         //cell.configureCell(car: cars[indexPath.row])
+        cell.selectionStyle = .none
         return cell
     }
     
