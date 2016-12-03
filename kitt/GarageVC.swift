@@ -15,6 +15,16 @@ class GarageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var cars = [Vehicle]()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Model.instance.userCars(success: { (vehicles) in
+            self.cars = vehicles
+        }, failure: { error in
+            self.showAlert(title: "Error", message: error.localizedDescription())
+        })
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

@@ -21,12 +21,10 @@ class Model {
         return RestClient(clientEnvironment: ClientEnvironment.SharedInstance)
     }
     
-    private var authToken: AuthToken?
-    
     // MARK: Class private constructor
     private init() {
         
-        authClient = AuthClient(clientId: "9dfe8d0a-6ac3-49a8-9c85-6156145e2ed5", clientSecretKey: "916e92e9-96bc-449f-aca6-173f3d46332e", clientRedirectURI: "https://margetova.eu")
+        authClient = AuthClient(clientId: "0b655654-4021-43d3-b556-5da5f8ec4d90", clientSecretKey: "fbb2113a-9260-4c4a-8be3-2e0e7573a6f9", clientRedirectURI: "app://asdf")
         
     }
     
@@ -50,7 +48,6 @@ class Model {
     public func logout() {
         
         authClient.logout()
-        authToken = nil
         
     }
     
