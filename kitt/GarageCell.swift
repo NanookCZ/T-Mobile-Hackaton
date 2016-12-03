@@ -8,7 +8,7 @@
 
 import UIKit
 import MojioSDK
-import AlamofireImage
+
 
 class GarageCell: UITableViewCell {
     
@@ -22,8 +22,8 @@ class GarageCell: UITableViewCell {
         super.awakeFromNib()
         background.layer.cornerRadius = 5.0
         background.clipsToBounds = true
-        layer.cornerRadius = 5.0
-        clipsToBounds = true
+        self.layer.cornerRadius = 5.0
+        self.clipsToBounds = true
     }
     
     func configureCell(car: Vehicle) {

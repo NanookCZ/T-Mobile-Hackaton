@@ -62,7 +62,7 @@ class Model {
         
     }
     
-    public func userCars(success: @escaping ([Vehicle]) -> Void, failure: @escaping (ModelError) -> Void) {
+    public func userCars(success: ([Vehicle]) -> Void, failure: @escaping (ModelError) -> Void) {
         
         restClient.get().vehicles(nil).run({ (vehicles) in
             self.currentCars = vehicles as? [Vehicle]
