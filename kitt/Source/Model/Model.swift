@@ -14,17 +14,53 @@ class Model {
     // Singleton property
     static let instance = Model()
     
-    var authClient: AuthClient
-    var restClient: RestClient
+    private let authClient: AuthClient
+    private let restClient: RestClient
+    
+    private var authToken: AuthToken?
     
     // Class private constructor
     private init() {
         
-        authClient = AuthClient(clientId: "9dfe8d0a-6ac3-49a8-9c85-6156145e2ed5", clientSecretKey: "916e92e9-96bc-449f-aca6-173f3d46332e", clientRedirectURI: "http://margetova.eu")
+        authClient = AuthClient(clientId: "0b655654-4021-43d3-b556-5da5f8ec4d90", clientSecretKey: "fbb2113a-9260-4c4a-8be3-2e0e7573a6f9", clientRedirectURI: "http://margetova.eu")
         restClient = RestClient(clientEnvironment: ClientEnvironment.SharedInstance)
         
     }
     
+    // Public functions
+    public func login(username: String?, password: String?, success: @escaping () -> Void, failure: @escaping (ModelError) -> Void ) {
     
+        guard let username = username, let password = password else {
+            failure(.MissingParams)
+            return
+        }
+        
+        authClient.login(username, password: password, completion: { token in
+            success()
+        }, failure: { error in
+            failure(.WrongCredentials)
+        })
+        
+    }
+    
+    
+    
+    
+    
+}
+
+enum ModelError: Error {
+    case MissingParams
+    case WrongCredentials
+    
+    func localizedDescription() -> String {
+        switch self {
+        case .MissingParams:
+            return "Missing input values"
+        case .WrongCredentials:
+            return "Incorrect login information"
+        }
+        
+    }
     
 }

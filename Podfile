@@ -5,7 +5,8 @@ target 'kitt' do
   use_frameworks!
 
   # Pods for kitt
-  pod ‘MojioSDK', :git => 'https://github.com/mojio/mojio-ios-sdk', :branch => ‘swift3’
+  pod 'MojioSDK', :git => 'https://github.com/mojio/mojio-ios-sdk', :branch => ‘swift3’
+  pod 'Alamofire'
 
   target 'kittTests' do
     inherit! :search_paths
