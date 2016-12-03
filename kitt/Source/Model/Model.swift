@@ -22,6 +22,7 @@ class Model {
     }
     
     // MARK: Public properties
+    var currentCars: [Vehicle]?
     var selectedCar: Vehicle?
     
     // MARK: Class private constructor
@@ -57,6 +58,7 @@ class Model {
     public func userCars(success: @escaping ([Vehicle]) -> Void, failure: @escaping (ModelError) -> Void) {
         
         restClient.get().vehicles(nil).run({ (vehicles) in
+            self.currentCars = vehicles as? [Vehicle]
             success(vehicles as? [Vehicle] ?? [])
         }, failure: { error in
             failure(self.parsedError(error: error))
