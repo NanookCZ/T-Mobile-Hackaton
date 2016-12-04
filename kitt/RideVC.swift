@@ -81,7 +81,7 @@ class RideVC: UIViewController {
 
     func nearestGasStation() -> String {
         
-        
+        return ""
         
         
     }
