@@ -58,9 +58,9 @@ class RideVC: BaseVC, UITextFieldDelegate {
                 lblOilState.text = (car.VehicleBattery?.RiskSeverity ?? "") + " Risk"
                 lblOilAmount.text = "\(car.VehicleBattery?.Value ?? 0.0 / 1000) V"
                 
-                lblFuelLevel.text = String(describing: car.VehicleFuelVolume?.Value ?? 0.0) + " l fuel level"
+                lblFuelLevel.text = String(describing: car.VehicleFuelVolume?.Value ?? 55.0) + " l fuel level"
                 lblFuelType.text = car.FuelType ?? "Diesel"
-                lblCurrentConsumption.text = String(describing: car.VehicleFuelEfficiency?.Value ?? 0.0) + " l/100km"
+                lblCurrentConsumption.text = String(describing: car.VehicleFuelEfficiency?.Value ?? 10.0) + " l/100km"
                 
                 lblStationPrice.text = nearestGasStation()
             }
@@ -73,6 +73,8 @@ class RideVC: BaseVC, UITextFieldDelegate {
         guard let car = Model.instance.selectedCar else {
             return
         }
+        
+        self.car = car
         
         if let url = URL(string: car.VehicleImage?.Normal ?? "") {
             imgCar.af_setImage(withURL: url)

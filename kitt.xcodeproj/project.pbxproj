@@ -288,7 +288,7 @@
 				TargetAttributes = {
 					AB2468631DEE3A8C0066F46F = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = UERQU83HKF;
+						DevelopmentTeam = CG63ZWPD86;
 						ProvisioningStyle = Automatic;
 					};
 					AB2468771DEE3A8C0066F46F = {
@@ -593,7 +593,7 @@
 			baseConfigurationReference = C291A29DAF356823BF3A6963 /* Pods-kitt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UERQU83HKF;
+				DEVELOPMENT_TEAM = CG63ZWPD86;
 				INFOPLIST_FILE = kitt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.marikond.kitt;
@@ -608,7 +608,7 @@
 			baseConfigurationReference = 405F8C9A798E1111DDB15B7E /* Pods-kitt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UERQU83HKF;
+				DEVELOPMENT_TEAM = CG63ZWPD86;
 				INFOPLIST_FILE = kitt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.marikond.kitt;

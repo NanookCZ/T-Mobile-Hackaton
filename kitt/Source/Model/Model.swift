@@ -92,8 +92,10 @@ class Model {
         
         selectedLocation = location
         
+        let carLocation = CLLocation(latitude: CLLocationDegrees(selectedCar!.VehicleLocation!.Lat), longitude: CLLocationDegrees(selectedCar!.VehicleLocation!.Lng))
+        let randomIndex = Int(arc4random_uniform(UInt32(gasStations.count)))
         
-        return (450000.0, gasStations.first!)
+        return (location.distance(from: carLocation), gasStations[randomIndex])
         
     }
     

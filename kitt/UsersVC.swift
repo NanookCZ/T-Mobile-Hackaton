@@ -46,7 +46,7 @@ class UsersVC: BaseVC {
         guard let car = Model.instance.selectedCar else {
             return
         }
-        
+
         if let url = URL(string: car.VehicleImage?.Normal ?? "") {
             carImage.af_setImage(withURL: url)
         }
@@ -56,9 +56,9 @@ class UsersVC: BaseVC {
         spotify.setOn(Model.instance.switchSpotify, animated: true)
         shareRide.setOn(Model.instance.switchSpotify, animated: true)
 
-        integrations.text = ""
-        km.text = ""
-        rides.text = ""
+        integrations.text = "2"
+        km.text = "42.4"
+        rides.text = "3"
         
     }
 }
