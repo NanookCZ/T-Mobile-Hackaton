@@ -53,6 +53,8 @@ class NotificationVC: BaseVC {
             lblAverage.text =  notification.texts.1
             lblMessage.text =  notification.texts.2
             
+            imgNotification.image = UIImage(named: "stop")
+            
             if Model.instance.switchSpeachNotifications {
                     let utterance = AVSpeechUtterance(string: "Please slow down")
                     utterance.voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle.siri_female_en-GB_premium")
