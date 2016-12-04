@@ -47,13 +47,9 @@ class NotificationVC: BaseVC {
     
     func displayNotification() {
         
-        if let notification = Model.instance.currentNotification {
-            print(notification)
-            
-            notification.texts
-            
-            lblSpeed.text = "Speed warning"
-            lblTitle.text =  notification.texts.0
+        if let notification = Model.instance.currentNotification {            
+            lblSpeed.text = notification.texts.0
+            lblTitle.text = "Speed warning"
             lblAverage.text =  notification.texts.1
             lblMessage.text =  notification.texts.2
             

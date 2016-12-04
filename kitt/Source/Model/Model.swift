@@ -26,6 +26,7 @@ class Model {
     var selectedCar: Vehicle? {
         didSet {
             self.checkForNotifications()
+            speedArray = []
         }
     }
     
@@ -251,10 +252,10 @@ class Model {
         }
         
         speedArray.append(speed)
-        
+        print("Speed: \(speed)")
         let averageSpeed = Int(speedArray.reduce(0, {$0 + $1})) / speedArray.count
         if averageSpeed > 55 && speedArray.count > 5 && switchNotifications {
-            print(averageSpeed)
+            print("Average speed: \(averageSpeed)")
             currentNotification = MessageType.Stop("Please slow down", "\(speed)", "\(averageSpeed)")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CarNotification"), object: self, userInfo: ["car": car])
             speedArray = []
