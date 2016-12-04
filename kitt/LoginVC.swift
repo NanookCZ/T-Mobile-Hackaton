@@ -34,6 +34,12 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleViewTap(_:))))
+    }
+    
+    func handleViewTap(_ sender: UIGestureRecognizer) {
+        view.endEditing(true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -61,6 +67,12 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         configureUI()
+    }
+    
+    func animationCurve(fromInfo userInfo: [AnyHashable: Any]) -> UIViewAnimationOptions {
+        let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
+        return UIViewAnimationOptions(rawValue: animationCurveRaw)
     }
     
 }

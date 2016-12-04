@@ -21,6 +21,7 @@
 		1BAA8DE81DF2E4EA00643DC8 /* GarageCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA8DE71DF2E4EA00643DC8 /* GarageCollCell.swift */; };
 		1BAA8DEA1DF2E67D00643DC8 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA8DE91DF2E67D00643DC8 /* UserCell.swift */; };
 		1BAA8DEC1DF2F45F00643DC8 /* MyCarsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA8DEB1DF2F45F00643DC8 /* MyCarsVC.swift */; };
+		AB0DDD161DF41804000E9486 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E05651DF2B225001A3BE8 /* NotificationVC.swift */; };
 		AB2468681DEE3A8C0066F46F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2468671DEE3A8C0066F46F /* AppDelegate.swift */; };
 		AB24686D1DEE3A8C0066F46F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB24686B1DEE3A8C0066F46F /* Main.storyboard */; };
 		AB24686F1DEE3A8C0066F46F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB24686E1DEE3A8C0066F46F /* Assets.xcassets */; };
@@ -436,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB6E05631DEE3D1F001A3BE8 /* Model.swift in Sources */,
+				AB0DDD161DF41804000E9486 /* NotificationVC.swift in Sources */,
 				1BAA8DEC1DF2F45F00643DC8 /* MyCarsVC.swift in Sources */,
 				1B63FE391DF2A24A00352155 /* Extensions.swift in Sources */,
 				1B63FE3D1DF2B23400352155 /* GarageCell.swift in Sources */,

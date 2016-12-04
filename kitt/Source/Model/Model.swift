@@ -81,6 +81,15 @@ class Model {
         
     }
     
+    public func getTripInfo(location: CLLocation) -> (distance: Double, bestStation: GasStation) {
+        
+        selectedLocation = location
+        
+        
+        return (45.0, gasStations.first!)
+        
+    }
+    
     func createAnotherUser() {
         let newUser = User()
         newUser.FirstName = "Dalibor"
