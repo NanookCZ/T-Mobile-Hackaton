@@ -163,7 +163,7 @@ class Model {
     }
     
     // Weather
-    public func currentWeather(location: CLLocation, success: ([String : AnyObject]) -> Void, failure: (ModelError) -> Void) {
+    public func currentWeather(location: CLLocation, success: @escaping ([String : AnyObject]) -> Void, failure: @escaping (ModelError) -> Void) {
         
         let parameters = ["key":"39e772ad39c34c81afa113737160212",
                           "q":"\(location.coordinate.latitude),\(location.coordinate.longitude)"]
@@ -171,9 +171,13 @@ class Model {
         Alamofire.request("https://api.apixu.com/v1/current.json", method: .get, parameters: parameters)
         .validate()
         .responseJSON { (response) in
-            print(response)
+            switch response.result {
+            case .success(let dict):
+                success(dict as? [String : AnyObject] ?? [:])
+            case .failure(let error):
+                failure(.APIError(error.localizedDescription))
+            }
         }
-        
     }
     
     public func incidentsInLocation(corner1: CLLocation, corner2: CLLocation, success: ([String : AnyObject]) -> Void, failure: (ModelError) -> Void) {
@@ -206,7 +210,9 @@ class Model {
             self.gasStations = []
             let sites = dictionary["sites"] as? [[String: Any]] ?? []
             for site in sites {
-                self.gasStations.append(GasStation(dict: site as [String : AnyObject]))
+                if let station = GasStation(dict: site as [String : AnyObject]) {
+                    self.gasStations.append(station)
+                }
             }
         }, failure: { error in
             print(error)

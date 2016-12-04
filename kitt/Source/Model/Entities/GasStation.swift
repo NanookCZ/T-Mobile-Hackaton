@@ -7,20 +7,32 @@
 //
 
 import Foundation
+import CoreLocation
 
 class GasStation {
     
     var name: String
-    var lat: String
-    var long: String
+    var city: String
+    var location: CLLocation
     var price: Float
     
-    init(dict: [String: AnyObject]) {
+    init?(dict: [String: AnyObject]) {
         
-        name = dict["name"] as? String ?? ""
-        lat = dict["lat_n"] as? String ?? ""
-        long = dict["lon_n"] as? String ?? ""
-        price = Float(dict["prices"]?["0004"] as? String ?? "40") ?? 40
+        if let gName = dict["name"] as? String,
+            let gLat = dict["lat_n"] as? String,
+            let gLon = dict["lon_n"] as? String {
+            
+            name = gName
+            let lat = Double(gLat) ?? 0.0
+            let long = Double(gLon) ?? 0.0
+            location = CLLocation(latitude: lat, longitude: long)
+            
+        } else {
+            return nil
+        }
+
+        city = dict["address_city"] as? String ?? ""
+        price = (Float(dict["prices"]?["0004"] as? String ?? "40") ?? 40) * 27.0
         
     }
     

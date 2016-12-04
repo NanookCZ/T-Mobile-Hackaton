@@ -9,11 +9,13 @@
 import UIKit
 import MojioSDK
 import AlamofireImage
+import CoreLocation
 
-class RideVC: UIViewController {
+class RideVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var containerView: UIView!
     @IBOutlet var imgCar: UIImageView!
+    @IBOutlet var searchContainerView: UIView!
     
     @IBOutlet var lblFirst: UILabel!
     @IBOutlet var lblSecond: UILabel!
@@ -38,6 +40,8 @@ class RideVC: UIViewController {
     @IBOutlet var effectiveTanking: UILabel!
     @IBOutlet var totalPrice: UILabel!
     
+    @IBOutlet var txtSearch: UITextField!
+    
     var car: Vehicle? {
         didSet {
             if let car = car {
@@ -58,7 +62,7 @@ class RideVC: UIViewController {
                 lblFuelType.text = car.FuelType
                 lblCurrentConsumption.text = String(describing: car.VehicleFuelEfficiency?.Value ?? 0.0) + " l/100km"
                 
-                lblNearestStation.text = nearestGasStation()
+                lblStationPrice.text = nearestGasStation()
             }
         }
     }
@@ -81,9 +85,43 @@ class RideVC: UIViewController {
 
     func nearestGasStation() -> String {
         
-        return ""
+        let stations = Model.instance.gasStations
         
+        guard stations.count > 0 && car?.VehicleLocation != nil else { return "" }
+        
+        let carLocation = CLLocation(latitude: CLLocationDegrees(car!.VehicleLocation!.Lat), longitude: CLLocationDegrees(car!.VehicleLocation!.Lng))
+        
+        let cheapestStation = stations.reduce((stations.first!.location.distance(from: carLocation), stations.first!.price), { ( result, station) in
+            
+            let newDistance = station.location.distance(from: carLocation)
+            if newDistance < result.0 {
+                return (newDistance, station.price)
+            }
+            return result
+        })
+        
+        
+        return String(Int(cheapestStation.0)) + " m, " + String(cheapestStation.1) + " Kč"
         
     }
     
+    @IBAction func searchTouchUpInside(_ sender: UITextField) {
+        
+        let geocoder = CLGeocoder()
+        
+        if sender.text != nil && sender.text!.characters.count > 0 {
+            geocoder.geocodeAddressString(sender.text!, completionHandler: { (placemarks, error) in
+                if error != nil {
+                    self.showAlert(title: nil, message: "The was an error processing your destination.")
+                } else if placemarks?.count == 0 {
+                    self.showAlert(title: nil, message: "No destinations found for your query")
+                } else {
+                    print(placemarks)
+                }
+            })
+        } else {
+            showAlert(title: nil, message: "You need to fill in destination")
+        }
+        
+    }
 }
