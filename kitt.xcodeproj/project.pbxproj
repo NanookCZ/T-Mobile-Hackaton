@@ -183,12 +183,12 @@
 			isa = PBXGroup;
 			children = (
 				1B63FE331DF29BDA00352155 /* LoginVC.swift */,
-				1B63FE3E1DF2BEEB00352155 /* MenuVC.swift */,
 				1B63FE3A1DF2B1C800352155 /* GarageVC.swift */,
+				1B63FE3E1DF2BEEB00352155 /* MenuVC.swift */,
+				1BAA8DEB1DF2F45F00643DC8 /* MyCarsVC.swift */,
 				1BAA8DDF1DF2CFF500643DC8 /* RideVC.swift */,
 				1BAA8DE11DF2D00500643DC8 /* UsersVC.swift */,
 				1BAA8DE31DF2D01700643DC8 /* StateVC.swift */,
-				1BAA8DEB1DF2F45F00643DC8 /* MyCarsVC.swift */,
 				AB6E05651DF2B225001A3BE8 /* NotificationVC.swift */,
 				AB6E055F1DEE3C65001A3BE8 /* Base */,
 			);

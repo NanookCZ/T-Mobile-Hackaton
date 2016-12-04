@@ -14,6 +14,7 @@ class GarageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     var cars = [Vehicle]()
+    var selectedVehicle: Vehicle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,14 +45,5 @@ class GarageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         Model.instance.selectedCar = cars[indexPath.row]
         performSegue(withIdentifier: "menuSegue", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "menuSegue" {
-            let navVC = segue.destination as! UINavigationController
-            if let menuVC = navVC.viewControllers.first as? MenuVC {
-                menuVC.selectedCar = "This car"
-            }
-        }
     }
 }

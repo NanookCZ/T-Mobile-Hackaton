@@ -9,7 +9,7 @@
 import UIKit
 import MojioSDK
 
-class MyCarsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, GarageCollCellDelegate {
+class MyCarsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -19,6 +19,13 @@ class MyCarsVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         super.viewDidLoad()
         
         cars = Model.instance.currentCars ?? []
+        collectionView.reloadData()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let frame = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 60 )
+        return frame
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -32,11 +39,6 @@ class MyCarsVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "garageCell", for: indexPath) as! GarageCollCell
         cell.configureCell(car: cars[indexPath.row], index: indexPath)
-        cell.delegate = self
         return cell
-    }
-    
-    func didSelectCar(index: IndexPath) {
-        print("car index")
     }
 }

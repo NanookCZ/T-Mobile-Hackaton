@@ -10,14 +10,8 @@ import UIKit
 import MojioSDK
 import AlamofireImage
 
-protocol GarageCollCellDelegate {
-    func didSelectCar(index: IndexPath)
-}
-
 class GarageCollCell: UICollectionViewCell, UITableViewDataSource {
-    
-    var delegate: GarageCollCellDelegate?
-   
+       
     @IBOutlet weak var carImage: UIImageView!
     @IBOutlet weak var year: UILabel!
     @IBOutlet weak var distance: UILabel!
@@ -25,8 +19,11 @@ class GarageCollCell: UICollectionViewCell, UITableViewDataSource {
     @IBOutlet weak var selectButton: AnimatedButton!
     @IBOutlet weak var tableView: UITableView!
 
-    var index: IndexPath?
-    
+    @IBOutlet weak var bgView: UIView!
+
+    var carUsers = [User]()
+    var thisCar: Vehicle?
+
     
     override func awakeFromNib() {
         tableView.dataSource = self
@@ -34,24 +31,42 @@ class GarageCollCell: UICollectionViewCell, UITableViewDataSource {
         selectButton.layer.borderColor = Colors.lightWhite.cgColor
         selectButton.layer.borderWidth = 1.0
         selectButton.clipsToBounds = true
+        bgView.layer.cornerRadius = 5.0
+        bgView.clipsToBounds = true
     }
     
     func configureCell(car: Vehicle, index: IndexPath) {
-        self.index = index
-        
+        self.thisCar = car
+
         if let url = URL(string: car.VehicleImage?.Normal ?? "") {
             carImage.af_setImage(withURL: url)
         }
+        year.text = car.CreatedOn
+        distance.text = (String(describing: car.VehicleOdometer?.Value ?? 0.0)) + (car.VehicleOdometer?.Unit ?? "")
+
+        if let userId = car.Id {
+            getUserDetails(userId: userId)
+        }
+        
         if let date = Model.instance.dateFormatter.date(from: car.CreatedOn ?? "") {
             let yearComponent = Calendar.current.component(.year, from: date)
             year.text = String(yearComponent)
         }
         distance.text = String((describing: car.VehicleOdometer?.Value ?? 0.0) / 1000.0)
+    }    
+
+    func getUserDetails(userId: String) {
+        Model.instance.getAllCarUsers(success: { (users) in
+            self.carUsers = users
+            self.tableView.reloadData()
+        }, failure: { failure in
+            print(failure)
+        })
     }
 
     @IBAction func selectButtonAction(_ sender: UIButton) {
-        if let index = index {
-            delegate?.didSelectCar(index: index)
+        if let car = thisCar {
+            Model.instance.selectedCar = car
         }
     }
     
@@ -62,13 +77,14 @@ class GarageCollCell: UICollectionViewCell, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return carUsers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell"
             , for: indexPath) as! UserCell
-        cell.configureCell(car: "hello")
+        cell.configureCell(user: carUsers[indexPath.row])
+        cell.separatorView.isHidden = indexPath.row == 0 ? true : false
         return cell
     }
     
