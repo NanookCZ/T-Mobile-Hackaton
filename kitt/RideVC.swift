@@ -11,7 +11,7 @@ import MojioSDK
 import AlamofireImage
 import CoreLocation
 
-class RideVC: UIViewController, UITextFieldDelegate {
+class RideVC: BaseVC, UITextFieldDelegate {
 
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var containerView: UIView!
@@ -49,10 +49,6 @@ class RideVC: UIViewController, UITextFieldDelegate {
         didSet {
             if let car = car {
                 
-                if let url = URL(string: car.VehicleImage?.Normal ?? "") {
-                    imgCar.af_setImage(withURL: url)
-                }
-                
                 lblFirst.text = String(describing: car.VehicleSpeed?.Value ?? 0.0)
                 lblSecond.text = String(describing: car.VehicleFuelEfficiency?.Value ?? 0.0)
                 lblThird.text = String(describing: car.DiagnosticCodes.count)
@@ -74,6 +70,7 @@ class RideVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         car = Model.instance.selectedCar
+        imgCar.image = Model.instance.selectedCarImage
         
         butSet.layer.cornerRadius = 5.0
         butSet.layer.borderColor = UIColor.white.cgColor

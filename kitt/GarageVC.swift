@@ -8,6 +8,7 @@
 
 import UIKit
 import MojioSDK
+import KRProgressHUD
 
 class GarageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -18,11 +19,14 @@ class GarageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        KRProgressHUD.show()
         
         Model.instance.userCars(success: { (vehicles) in
+            KRProgressHUD.dismiss()
             self.cars = vehicles
             self.tableView.reloadData()
         }, failure: { error in
+            KRProgressHUD.dismiss()
             self.showAlert(title: "Error", message: error.localizedDescription())
         })
     }
@@ -44,6 +48,12 @@ class GarageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         Model.instance.selectedCar = cars[indexPath.row]
-        performSegue(withIdentifier: "menuSegue", sender: self)
+        
+        if let cell =  self.tableView(tableView, cellForRowAt: indexPath) as? GarageCell {
+            let image = cell.carImage.image
+            cell.animate()
+            Model.instance.selectedCarImage = image
+        }
+               performSegue(withIdentifier: "menuSegue", sender: self)
     }
 }

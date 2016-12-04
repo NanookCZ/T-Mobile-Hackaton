@@ -8,10 +8,11 @@
 
 import UIKit
 
-class UsersVC: UIViewController {
+class UsersVC: BaseVC {
 
     @IBOutlet weak var bgView: UIView!
 
+    @IBOutlet weak var carImage: UIImageView!
     @IBOutlet weak var integrations: UILabel!
     @IBOutlet weak var km: UILabel!
     @IBOutlet weak var rides: UILabel!
@@ -41,6 +42,8 @@ class UsersVC: UIViewController {
 
         bgView.layer.cornerRadius = 5.0
         bgView.clipsToBounds = true
+        
+        carImage.image = Model.instance.selectedCarImage
         
         twisto.setOn(Model.instance.switchTwistoPayments, animated: true)
         wifi.setOn(Model.instance.switchShareHotspots, animated: true)

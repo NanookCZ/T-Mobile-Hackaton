@@ -8,9 +8,10 @@
 
 import UIKit
 
-class StateVC: UIViewController {
+class StateVC: BaseVC {
     
     @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var carImage: UIImageView!
     
     @IBOutlet weak var vin: UILabel!
     @IBOutlet weak var added: UILabel!
@@ -22,6 +23,11 @@ class StateVC: UIViewController {
     @IBOutlet weak var notifications: UISwitch!
     @IBAction func notificationsAction(_ sender: UISwitch) {
         Model.instance.switchNotifications = sender.isOn
+    }
+    
+    @IBOutlet weak var speachNotifications: UISwitch!
+    @IBAction func speachNotificationsAction(_ sender: UISwitch) {
+        Model.instance.switchSpeachNotifications = sender.isOn
     }
     
     @IBOutlet weak var nightMode: UISwitch!
@@ -44,10 +50,11 @@ class StateVC: UIViewController {
         Model.instance.switchShareGps = sender.isOn
     }
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        carImage.image = Model.instance.selectedCarImage
+
 
         bgView.layer.cornerRadius = 5.0
         bgView.clipsToBounds = true
@@ -70,6 +77,7 @@ class StateVC: UIViewController {
         notificationsRide.setOn(Model.instance.switchNotificationDuringRide, animated: true)
         hotspots.setOn(Model.instance.switchShareHotspots, animated: true)
         gps.setOn(Model.instance.switchShareGps, animated: true)
+        speachNotifications.setOn(Model.instance.switchSpeachNotifications, animated: true)
         
     }
 

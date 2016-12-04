@@ -11,6 +11,7 @@ target 'kitt' do
   pod 'MojioSDK', :git => 'https://github.com/mojio/mojio-ios-sdk', :branch => ‘swift3’
   pod 'Alamofire'
   pod 'AlamofireImage'
+  pod 'KRProgressHUD'
 
   target 'kittTests' do
     inherit! :search_paths

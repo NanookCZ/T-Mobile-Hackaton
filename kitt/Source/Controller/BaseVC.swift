@@ -9,12 +9,18 @@
 import UIKit
 
 class BaseVC: UIViewController {
+    
+    var isNotificationActive = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    func showNotification() {
+        if isNotificationActive == false {
+            if let notificationVC = storyboard?.instantiateViewController(withIdentifier: "notificationVC") as? NotificationVC {
+                present(notificationVC, animated: true, completion: nil)
+            }
+        }
+    }
 }
