@@ -8,7 +8,7 @@
 
 import UIKit
 import MojioSDK
-
+import AlamofireImage
 
 class GarageCell: UITableViewCell {
     

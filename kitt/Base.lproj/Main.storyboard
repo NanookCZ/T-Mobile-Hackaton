@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XXe-II-gPv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XXe-II-gPv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -161,7 +161,7 @@
                                         <rect key="frame" x="0.0" y="28" width="337.5" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xDt-NS-hy8" id="EN3-lD-0p6">
-                                            <rect key="frame" x="0.0" y="0.0" width="337.5" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="337.5" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyGarage" translatesAutoresizingMaskIntoConstraints="NO" id="y0d-iz-hnM">
@@ -1380,7 +1380,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="4RK-Yv-Lxt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="dalibor.kozak@post.cz" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mEB-Sf-tgK">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="richard.margeta@gmail.com" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mEB-Sf-tgK">
                                 <rect key="frame" x="30" y="349" width="315" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FJk-qu-ayO"/>
@@ -1399,7 +1399,7 @@
                                     <constraint firstAttribute="height" constant="1" id="54v-wQ-Ljh"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="M0unta1n78" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TdR-d0-4Gh">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="hovno753" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TdR-d0-4Gh">
                                 <rect key="frame" x="30" y="430" width="315" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gC3-WH-acX"/>
@@ -1484,7 +1484,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OME-sr-uJ5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6Un-OJ-Kgt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Un-OJ-Kgt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

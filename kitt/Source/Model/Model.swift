@@ -25,6 +25,8 @@ class Model {
     var currentCars: [Vehicle]?
     var selectedCar: Vehicle?
     
+    var gasStations: [GasStation] = []
+    
     var selectedLocation: CLLocation?
     
     var dateFormatter: DateFormatter = DateFormatter()
@@ -62,7 +64,7 @@ class Model {
         
     }
     
-    public func userCars(success: ([Vehicle]) -> Void, failure: @escaping (ModelError) -> Void) {
+    public func userCars(success: @escaping ([Vehicle]) -> Void, failure: @escaping (ModelError) -> Void) {
         
         restClient.get().vehicles(nil).run({ (vehicles) in
             self.currentCars = vehicles as? [Vehicle]
@@ -153,7 +155,11 @@ class Model {
     private func initGasStations() {
         
         gasStations(success: { (dictionary) in
-            print(dictionary)
+            gasStations = []
+            let sites = dictionary["sites"] as? [[String: Any]] ?? []
+            for site in sites {
+                gasStations.append(GasStation(dict: site as [String : AnyObject]))
+            }
         }, failure: { error in
             print(error)
         })

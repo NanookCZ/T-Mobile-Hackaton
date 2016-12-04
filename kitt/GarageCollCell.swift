@@ -8,6 +8,7 @@
 
 import UIKit
 import MojioSDK
+import AlamofireImage
 
 protocol GarageCollCellDelegate {
     func didSelectCar(index: IndexPath)
