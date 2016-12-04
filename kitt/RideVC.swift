@@ -70,8 +70,13 @@ class RideVC: BaseVC, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        car = Model.instance.selectedCar
-        imgCar.image = Model.instance.selectedCarImage
+        guard let car = Model.instance.selectedCar else {
+            return
+        }
+        
+        if let url = URL(string: car.VehicleImage?.Normal ?? "") {
+            imgCar.af_setImage(withURL: url)
+        }
         
         butSet.layer.cornerRadius = 5.0
         butSet.layer.borderColor = UIColor.white.cgColor

@@ -29,7 +29,6 @@ class Model {
         }
     }
     
-    var selectedCarImage: UIImage?
     var carUsers = [User]()
     
     var gasStations: [GasStation] = []
@@ -253,18 +252,14 @@ class Model {
         
         speedArray.append(speed)
         
-        let averageSpeed = speedArray.reduce(0, {$0 + $1})
+        let averageSpeed = Int(speedArray.reduce(0, {$0 + $1})) / speedArray.count
         if averageSpeed > 55 {
             print(averageSpeed)
-            //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CarNotification"), object: self, userInfo: ["car": car])
+            currentNotification = MessageType.Stop("Please slow down", "", "")
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CarNotification"), object: self, userInfo: ["car": car])
+            speedArray = []
         }
     }
-    
-    
-    
-    
-    
-    
     
     // MARK: Private stuff
     private func parsedError(error: Any?) -> ModelError {

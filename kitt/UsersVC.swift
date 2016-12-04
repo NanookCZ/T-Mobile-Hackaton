@@ -43,7 +43,13 @@ class UsersVC: BaseVC {
         bgView.layer.cornerRadius = 5.0
         bgView.clipsToBounds = true
         
-        carImage.image = Model.instance.selectedCarImage
+        guard let car = Model.instance.selectedCar else {
+            return
+        }
+        
+        if let url = URL(string: car.VehicleImage?.Normal ?? "") {
+            carImage.af_setImage(withURL: url)
+        }
         
         twisto.setOn(Model.instance.switchTwistoPayments, animated: true)
         wifi.setOn(Model.instance.switchShareHotspots, animated: true)

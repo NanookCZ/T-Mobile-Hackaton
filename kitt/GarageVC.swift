@@ -48,12 +48,6 @@ class GarageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         Model.instance.selectedCar = cars[indexPath.row]
-        
-        if let cell =  self.tableView(tableView, cellForRowAt: indexPath) as? GarageCell {
-            let image = cell.carImage.image
-//            cell.animate()
-            Model.instance.selectedCarImage = image
-        }
-               performSegue(withIdentifier: "menuSegue", sender: self)
+        performSegue(withIdentifier: "menuSegue", sender: self)
     }
 }

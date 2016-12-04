@@ -53,7 +53,13 @@ class StateVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        carImage.image = Model.instance.selectedCarImage
+        guard let car = Model.instance.selectedCar else {
+            return
+        }
+        
+        if let url = URL(string: car.VehicleImage?.Normal ?? "") {
+            carImage.af_setImage(withURL: url)
+        }
 
 
         bgView.layer.cornerRadius = 5.0
