@@ -8,6 +8,7 @@
 
 import UIKit
 import MojioSDK
+import AVFoundation
 
 class NotificationVC: BaseVC {
 
@@ -37,12 +38,34 @@ class NotificationVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        displayNotification()
+        NotificationCenter.default.addObserver(self, selector: #selector(displayNotification), name: NSNotification.Name(rawValue: "CarNotification"), object: nil)
     }
-
     
-
+    func displayNotification() {
+        
+        if let notification = Model.instance.currentNotification {
+            print(notification)
+            
+            if Model.instance.switchSpeachNotifications {
+                    let utterance = AVSpeechUtterance(string: "Please slow down")
+                    utterance.voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle.siri_female_en-GB_premium")
+                    let synthesizer = AVSpeechSynthesizer()
+                    synthesizer.speak(utterance)
+            }
+        }
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+          isNotificationActive = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+          isNotificationActive = false
+    }
 
 }
 

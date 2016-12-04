@@ -23,13 +23,20 @@ class Model {
     
     // MARK: Public properties
     var currentCars: [Vehicle]?
-    var selectedCar: Vehicle?
+    var selectedCar: Vehicle? {
+        didSet {
+            self.checkForNotifications()
+        }
+    }
+    
+    var selectedCarImage: UIImage?
     var carUsers = [User]()
-
+    
     var gasStations: [GasStation] = []
     
     // MARK: Switches
-    var switchNotifications = false
+    var switchNotifications = true
+    var switchSpeachNotifications = true
     var switchNightMode = false
     var switchNotificationDuringRide = false
     var switchShareHotspots = false
@@ -37,22 +44,22 @@ class Model {
     var switchTwistoPayments = false
     var switchSpotify = false
     var switchShareRide = false
-
+    
     var selectedLocation: CLLocation?
-    var dateFormatter: DateFormatter = DateFormatter()
+    
+    //Notifications
+    var notificationTimer: Timer?
+    var currentNotification: MessageType?
     
     // MARK: Class private constructor
     private init() {
         
         authClient = AuthClient(clientId: "0b655654-4021-43d3-b556-5da5f8ec4d90", clientSecretKey: "fbb2113a-9260-4c4a-8be3-2e0e7573a6f9", clientRedirectURI: "app://asdf")
-        
-        DateFormatter.dateFormat(fromTemplate: "yyyy-MM-dd'T'HH:mm:ss.SSSZ", options: 0, locale: Locale.current)
-        
     }
     
     // MARK: Public functions
     public func login(username: String?, password: String?, success: @escaping () -> Void, failure: @escaping (ModelError) -> Void ) {
-    
+        
         guard let username = username, let password = password else {
             failure(.MissingParams)
             return
@@ -67,8 +74,9 @@ class Model {
         })
         
     }
-    
+
     public func getAllCarUsers(success: @escaping ([User]) -> Void, failure: @escaping (ModelError) -> Void) {
+        self.carUsers.removeAll()
         createAnotherUser()
         self.userInfo(success: { (user) in
             self.carUsers.append(user)
@@ -96,15 +104,8 @@ class Model {
         self.carUsers.append(newUser)
     }
     
-    func getUserDetails(userId: String) {
-        
-    }
-
-    
     public func logout() {
-        
         authClient.logout()
-        
     }
     
     public func userCars(success: @escaping ([Vehicle]) -> Void, failure: @escaping (ModelError) -> Void) {
@@ -134,7 +135,7 @@ class Model {
         
         let parameters = ["action" : "getDirectionsAndPumps",
                           "startPlace" : "\(start.coordinate.latitude),\(start.coordinate.longitude)",
-                          "endPlace" : "\(end.coordinate.latitude),\(end.coordinate.longitude)"]
+            "endPlace" : "\(end.coordinate.latitude),\(end.coordinate.longitude)"]
         
         Alamofire.request("https://fleetheroapi.ccs.cz/index.php", method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .validate()
@@ -169,9 +170,9 @@ class Model {
                           "q":"\(location.coordinate.latitude),\(location.coordinate.longitude)"]
         
         Alamofire.request("https://api.apixu.com/v1/current.json", method: .get, parameters: parameters)
-        .validate()
-        .responseJSON { (response) in
-            print(response)
+            .validate()
+            .responseJSON { (response) in
+                print(response)
         }
         
     }
@@ -187,6 +188,70 @@ class Model {
         }
         
     }
+    
+    public func strintToDate(dateString: String) -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        return formatter.date(from:  dateString)
+    }
+    
+    public func getSelectedCar(success: @escaping (Vehicle?) -> Void, failure: @escaping (ModelError) -> Void) {
+        
+        restClient.get().vehicles(self.selectedCar?.Id).run({ (vehicles) in
+            success(vehicles as? Vehicle)
+        }, failure: { error in
+            failure(self.parsedError(error: error))
+        }
+        )
+        
+    }
+    
+    //MARK: Notifications
+    
+    private func checkForNotifications() {
+        if self.switchNotifications {
+            
+            if self.notificationTimer == nil {
+                
+                self.notificationTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { (timer) in
+                    self.getSelectedCar(success: { (car) in
+                        self.observeValuesForNotifications(car: car!)
+                    }, failure: { (error) in
+                        print(error)
+                    })
+                })
+
+                self.notificationTimer?.fire()
+            }
+        }
+    }
+    
+    private var speedArray = [Float]()
+    
+    private func observeValuesForNotifications(car: Vehicle) {
+        
+        guard let speed = car.VehicleSpeed?.Value else {
+            return
+        }
+        
+        if speedArray.count == 10 {
+            speedArray.remove(at: 0)
+        }
+        
+        speedArray.append(speed)
+        
+        let averageSpeed = speedArray.reduce(0, {$0 + $1})
+        if averageSpeed > 55 {
+            print(averageSpeed)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CarNotification"), object: self, userInfo: ["car": car])
+        }
+    }
+    
+    
+    
+    
+    
+    
     
     // MARK: Private stuff
     private func parsedError(error: Any?) -> ModelError {

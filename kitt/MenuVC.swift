@@ -9,7 +9,7 @@
 import UIKit
 import MojioSDK
 
-class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MenuVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var name: UILabel!
@@ -20,9 +20,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        
+                
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.view.backgroundColor = UIColor.clear
         navigationController?.navigationBar.backgroundColor = UIColor.clear
@@ -36,6 +34,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.name.text = selectedCar.Name
         }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(showNotification), name: NSNotification.Name(rawValue: "CarNotification"), object: nil)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

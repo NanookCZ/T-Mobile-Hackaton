@@ -10,10 +10,10 @@ import UIKit
 import MojioSDK
 import AlamofireImage
 
-class RideVC: UIViewController {
+class RideVC: BaseVC {
 
     @IBOutlet var containerView: UIView!
-    @IBOutlet var imgCar: UIImageView!
+    @IBOutlet var carImage: UIImageView!
     
     @IBOutlet var lblFirst: UILabel!
     @IBOutlet var lblSecond: UILabel!
@@ -42,10 +42,6 @@ class RideVC: UIViewController {
         didSet {
             if let car = car {
                 
-                if let url = URL(string: car.VehicleImage?.Normal ?? "") {
-                    imgCar.af_setImage(withURL: url)
-                }
-                
                 lblFirst.text = String(describing: car.VehicleSpeed?.Value ?? 0.0)
                 lblSecond.text = String(describing: car.VehicleFuelEfficiency?.Value ?? 0.0)
                 lblThird.text = String(describing: car.DiagnosticCodes.count)
@@ -67,6 +63,7 @@ class RideVC: UIViewController {
         super.viewDidLoad()
 
         car = Model.instance.selectedCar
+        carImage.image = Model.instance.selectedCarImage
         
         // Do any additional setup after loading the view.
         containerView.layer.cornerRadius = 5.0

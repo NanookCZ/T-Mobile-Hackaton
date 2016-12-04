@@ -10,7 +10,7 @@ import UIKit
 import MojioSDK
 import AlamofireImage
 
-class GarageCell: UITableViewCell {
+class GarageCell: AnimatedTableCell {
     
     @IBOutlet weak var carImage: UIImageView!
     @IBOutlet weak var background: UIView!

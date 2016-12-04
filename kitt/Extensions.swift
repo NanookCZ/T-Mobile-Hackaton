@@ -66,6 +66,45 @@ class AnimatedButton: UIButton {
     }
 }
 
+class AnimatedTableCell: UITableViewCell {
+    @IBInspectable var cornerRadius: CGFloat = 10
+    
+    override func awakeFromNib() {
+        setupView()
+    }
+    
+    public func animate(sender: UITapGestureRecognizer) {
+        self.scaleToSmall()
+//        self.scaleAnimation()
+//        self.scaleToDefault()
+    }
+    
+    func setupView() {
+        self.layer.cornerRadius = cornerRadius
+    }
+    
+    func scaleToSmall() {
+        let scaleAnim = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
+        scaleAnim?.toValue = NSValue(cgSize: CGSize(width: 0.95, height: 0.95))
+        self.layer.pop_add(scaleAnim, forKey: "scaleSmall")
+    }
+    
+    func scaleAnimation() {
+        let scaleAnim = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY)
+        scaleAnim?.velocity = NSValue(cgSize: CGSize(width: 3.0, height: 3.0))
+        scaleAnim?.toValue = NSValue(cgSize: CGSize(width: 1.0, height: 1.0))
+        scaleAnim?.springBounciness = 18
+        self.layer.pop_add(scaleAnim, forKey: "scaleSmall")
+    }
+    
+    func scaleToDefault() {
+        let scaleAnim = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
+        scaleAnim?.toValue = NSValue(cgSize: CGSize(width: 1.0, height: 1.0))
+        self.layer.pop_add(scaleAnim, forKey: "scaleSmall")
+    }
+
+}
+
 extension UIViewController {
     
     /**

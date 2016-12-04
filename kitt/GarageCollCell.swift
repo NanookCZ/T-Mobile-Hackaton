@@ -48,12 +48,17 @@ class GarageCollCell: UICollectionViewCell, UITableViewDataSource {
             getUserDetails(userId: userId)
         }
         
-        if let date = Model.instance.dateFormatter.date(from: car.CreatedOn ?? "") {
+        if let dateStr = car.CreatedOn {
+            guard let date = Model.instance.strintToDate(dateString: dateStr) else {
+                year.text = "-"
+                return
+            }
             let yearComponent = Calendar.current.component(.year, from: date)
             year.text = String(yearComponent)
         }
+
         distance.text = String((describing: car.VehicleOdometer?.Value ?? 0.0) / 1000.0)
-    }    
+    }
 
     func getUserDetails(userId: String) {
         Model.instance.getAllCarUsers(success: { (users) in
