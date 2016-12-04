@@ -47,8 +47,13 @@ class NotificationVC: BaseVC {
     
     func displayNotification() {
         
-        if let notification = Model.instance.currentNotification {
-            print(notification)
+        if let notification = Model.instance.currentNotification {            
+            lblSpeed.text = notification.texts.0
+            lblTitle.text = "Speed warning"
+            lblAverage.text =  notification.texts.1
+            lblMessage.text =  notification.texts.2
+            
+            imgNotification.image = UIImage(named: "stop")
             
             if Model.instance.switchSpeachNotifications {
                     let utterance = AVSpeechUtterance(string: "Please slow down")
