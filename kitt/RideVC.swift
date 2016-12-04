@@ -193,13 +193,25 @@ class RideVC: BaseVC, UITextFieldDelegate {
                     let consumption: Double = Double(self.car?.VehicleFuelEfficiency?.Value ?? 10.0) / 100.0
                     self.totalPrice.text = String(Double(tripInfo.bestStation.price) * (tripInfo.distance / 1000) * consumption)
                     
-                    self.searchContainerView.isHidden = true
-                    self.infoContainerView.isHidden = false
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.searchContainerView.isHidden = true
+                        self.infoContainerView.isHidden = false
+                    })
                 }
             })
         } else {
             showAlert(title: nil, message: "You need to fill in destination")
         }
+        
+    }
+    
+    @IBAction func resetTouchUpInside(_ sender: Any) {
+        Model.instance.selectedLocation = nil
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.searchContainerView.isHidden = true
+            self.infoContainerView.isHidden = false
+        })
         
     }
     
