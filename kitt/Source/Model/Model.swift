@@ -102,14 +102,19 @@ class Model {
         
     }
     
-    public func gasStations(success: ([String : AnyObject]) -> Void, failure: (ModelError) -> Void) {
+    public func gasStations(success: @escaping ([String : AnyObject]) -> Void, failure: @escaping (ModelError) -> Void) {
         
         let parameters = ["action" : "getAllAggPumpsWithPositionNoLevels"]
         
         Alamofire.request("https://fleetheroapi.ccs.cz/index.php", method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .validate()
             .responseJSON { (response) in
-                print(response)
+                switch response.result {
+                case .success(let dict):
+                    success(dict as? [String : AnyObject] ?? [:])
+                case .failure(let error):
+                    failure(.APIError(error.localizedDescription))
+                }
         }
         
     }
@@ -155,10 +160,10 @@ class Model {
     private func initGasStations() {
         
         gasStations(success: { (dictionary) in
-            gasStations = []
+            self.gasStations = []
             let sites = dictionary["sites"] as? [[String: Any]] ?? []
             for site in sites {
-                gasStations.append(GasStation(dict: site as [String : AnyObject]))
+                self.gasStations.append(GasStation(dict: site as [String : AnyObject]))
             }
         }, failure: { error in
             print(error)

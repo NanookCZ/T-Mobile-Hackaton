@@ -57,6 +57,8 @@ class RideVC: UIViewController {
                 lblFuelLevel.text = String(describing: car.VehicleFuelVolume?.Value ?? 0.0) + " l fuel level"
                 lblFuelType.text = car.FuelType
                 lblCurrentConsumption.text = String(describing: car.VehicleFuelEfficiency?.Value ?? 0.0) + " l/100km"
+                
+                lblNearestStation.text = nearestGasStation()
             }
         }
     }
@@ -77,6 +79,11 @@ class RideVC: UIViewController {
         lblNearestStation.text = "Nearest station"
     }
 
-    
+    func nearestGasStation() -> String {
+        
+        
+        
+        
+    }
     
 }
