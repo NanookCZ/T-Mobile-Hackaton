@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XXe-II-gPv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XXe-II-gPv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,7 +40,11 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="buJ-N6-xqC">
                                                     <rect key="frame" x="0.0" y="5" width="337.5" height="285"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="carImg" translatesAutoresizingMaskIntoConstraints="NO" id="sux-m5-Yxg">
+<<<<<<< HEAD
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="sux-m5-Yxg">
+=======
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="sux-m5-Yxg">
+>>>>>>> refs/remotes/sveta/model
                                                             <rect key="frame" x="0.0" y="0.0" width="337.5" height="220"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="220" id="eUR-MU-enP"/>
@@ -161,7 +165,7 @@
                                         <rect key="frame" x="0.0" y="28" width="337.5" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xDt-NS-hy8" id="EN3-lD-0p6">
-                                            <rect key="frame" x="0.0" y="0.0" width="337.5" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="337.5" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyGarage" translatesAutoresizingMaskIntoConstraints="NO" id="y0d-iz-hnM">
@@ -262,6 +266,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EXf-ya-iBL">
                                 <rect key="frame" x="-2" y="52" width="377" height="740"/>
                                 <subviews>
+<<<<<<< HEAD
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VcT-4P-bpf">
                                         <rect key="frame" x="19" y="70" width="337" height="288"/>
                                         <subviews>
@@ -320,6 +325,14 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+=======
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5ut-ST-gca">
+                                        <rect key="frame" x="0.0" y="0.0" width="337" height="178.5"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YH7-eH-45e" userLabel="SeparatorView" customClass="SeparatorView" customModule="kitt" customModuleProvider="target">
+                                        <rect key="frame" x="111.5" y="188.5" width="1" height="41.5"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+>>>>>>> refs/remotes/sveta/model
                                         <constraints>
                                             <constraint firstItem="ZCo-rq-QTJ" firstAttribute="centerX" secondItem="P0K-nk-onD" secondAttribute="centerX" id="00P-KL-aUh"/>
                                             <constraint firstItem="ro3-eg-0p0" firstAttribute="centerX" secondItem="f9M-WC-8ys" secondAttribute="centerX" id="063-gN-cp1"/>
@@ -627,11 +640,17 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
+<<<<<<< HEAD
                         <outlet property="butSet" destination="71t-GR-WmE" id="4Jf-S8-9x2"/>
                         <outlet property="containerView" destination="VcT-4P-bpf" id="dUQ-Ow-TwV"/>
                         <outlet property="effectiveTanking" destination="lyK-CI-82S" id="KDD-eo-xf7"/>
                         <outlet property="imgCar" destination="5ut-ST-gca" id="wVn-LB-ehq"/>
                         <outlet property="infoContainerView" destination="hDW-Xp-ctv" id="Tbg-AB-IpN"/>
+=======
+                        <outlet property="carImage" destination="5ut-ST-gca" id="bDN-B2-rYg"/>
+                        <outlet property="containerView" destination="VcT-4P-bpf" id="dUQ-Ow-TwV"/>
+                        <outlet property="effectiveTanking" destination="lyK-CI-82S" id="KDD-eo-xf7"/>
+>>>>>>> refs/remotes/sveta/model
                         <outlet property="lblCurrentConsumption" destination="9n7-Tu-7ZI" id="4vI-dq-de2"/>
                         <outlet property="lblEstimate" destination="HCA-ch-Bkk" id="d8A-ro-e0j"/>
                         <outlet property="lblFirst" destination="f9M-WC-8ys" id="B4H-6d-7PD"/>
@@ -648,6 +667,8 @@
                         <outlet property="lblStationPrice" destination="ddn-FW-4KO" id="tal-QO-wjC"/>
                         <outlet property="lblThird" destination="L47-aX-vNN" id="ULo-27-3vA"/>
                         <outlet property="lblThirdSubtitle" destination="Pp6-Y5-9VU" id="z3A-I5-NMb"/>
+                        <outlet property="scrollView" destination="EXf-ya-iBL" id="mXU-7a-Y3Y"/>
+                        <outlet property="searchContainerView" destination="FMh-JO-U49" id="3xb-6q-S3Y"/>
                         <outlet property="totalPrice" destination="BbW-mZ-roe" id="o0W-Bw-Q8g"/>
                         <outlet property="txtSearch" destination="eqO-dE-lZY" id="ivh-NH-g67"/>
                     </connections>
@@ -1613,7 +1634,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OME-sr-uJ5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6Un-OJ-Kgt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Un-OJ-Kgt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1638,7 +1659,6 @@
         <image name="RideStation" width="50" height="50"/>
         <image name="bg" width="750" height="1334"/>
         <image name="bg_jazda" width="750" height="1334"/>
-        <image name="carImg" width="648" height="352"/>
         <image name="login_bg" width="750" height="1334"/>
         <image name="logo" width="578" height="137"/>
         <image name="spotify" width="100" height="100"/>

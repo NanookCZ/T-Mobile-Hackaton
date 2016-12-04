@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		06A10EF5CF6CF12682B0BA8C /* Pods_kitt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE19CE4D82D34B5D283CA67 /* Pods_kitt.framework */; };
-		1B5AF4771DF4180D00DE9B50 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E05651DF2B225001A3BE8 /* NotificationVC.swift */; };
 		1B63FE341DF29BDA00352155 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B63FE331DF29BDA00352155 /* LoginVC.swift */; };
 		1B63FE371DF29F1200352155 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B63FE361DF29F1200352155 /* SeparatorView.swift */; };
 		1B63FE391DF2A24A00352155 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B63FE381DF2A24A00352155 /* Extensions.swift */; };
@@ -22,7 +21,7 @@
 		1BAA8DE81DF2E4EA00643DC8 /* GarageCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA8DE71DF2E4EA00643DC8 /* GarageCollCell.swift */; };
 		1BAA8DEA1DF2E67D00643DC8 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA8DE91DF2E67D00643DC8 /* UserCell.swift */; };
 		1BAA8DEC1DF2F45F00643DC8 /* MyCarsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA8DEB1DF2F45F00643DC8 /* MyCarsVC.swift */; };
-		AB0DDD161DF41804000E9486 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E05651DF2B225001A3BE8 /* NotificationVC.swift */; };
+		AB08C9061DF42B19007BB9CB /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08C9051DF42B19007BB9CB /* NotificationVC.swift */; };
 		AB2468681DEE3A8C0066F46F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2468671DEE3A8C0066F46F /* AppDelegate.swift */; };
 		AB24686D1DEE3A8C0066F46F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB24686B1DEE3A8C0066F46F /* Main.storyboard */; };
 		AB24686F1DEE3A8C0066F46F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB24686E1DEE3A8C0066F46F /* Assets.xcassets */; };
@@ -62,6 +61,7 @@
 		1BAA8DEB1DF2F45F00643DC8 /* MyCarsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCarsVC.swift; sourceTree = "<group>"; };
 		405F8C9A798E1111DDB15B7E /* Pods-kitt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kitt.release.xcconfig"; path = "Pods/Target Support Files/Pods-kitt/Pods-kitt.release.xcconfig"; sourceTree = "<group>"; };
 		6E6CA5C40146E50D54A48DD7 /* Pods_kittTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kittTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB08C9051DF42B19007BB9CB /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationVC.swift; path = Source/Controller/NotificationVC.swift; sourceTree = "<group>"; };
 		AB2468641DEE3A8C0066F46F /* kitt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kitt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2468671DEE3A8C0066F46F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB24686C1DEE3A8C0066F46F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,7 +72,6 @@
 		AB24687C1DEE3A8C0066F46F /* kittTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kittTests.swift; sourceTree = "<group>"; };
 		AB24687E1DEE3A8C0066F46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB6E05621DEE3D1F001A3BE8 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Source/Model/Model.swift; sourceTree = "<group>"; };
-		AB6E05651DF2B225001A3BE8 /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationVC.swift; path = Source/Controller/NotificationVC.swift; sourceTree = "<group>"; };
 		ABD90A901DF2D3B700167006 /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseVC.swift; path = Source/Controller/BaseVC.swift; sourceTree = "<group>"; };
 		ABD90A921DF34B5700167006 /* GasStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GasStation.swift; path = Source/Model/Entities/GasStation.swift; sourceTree = "<group>"; };
 		C291A29DAF356823BF3A6963 /* Pods-kitt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kitt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kitt/Pods-kitt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +183,7 @@
 		AB6E055E1DEE3C25001A3BE8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AB08C9051DF42B19007BB9CB /* NotificationVC.swift */,
 				1B63FE331DF29BDA00352155 /* LoginVC.swift */,
 				1B63FE3A1DF2B1C800352155 /* GarageVC.swift */,
 				1B63FE3E1DF2BEEB00352155 /* MenuVC.swift */,
@@ -191,7 +191,6 @@
 				1BAA8DDF1DF2CFF500643DC8 /* RideVC.swift */,
 				1BAA8DE11DF2D00500643DC8 /* UsersVC.swift */,
 				1BAA8DE31DF2D01700643DC8 /* StateVC.swift */,
-				AB6E05651DF2B225001A3BE8 /* NotificationVC.swift */,
 				AB6E055F1DEE3C65001A3BE8 /* Base */,
 			);
 			name = Controller;
@@ -289,7 +288,7 @@
 				TargetAttributes = {
 					AB2468631DEE3A8C0066F46F = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = UERQU83HKF;
+						DevelopmentTeam = CG63ZWPD86;
 						ProvisioningStyle = Automatic;
 					};
 					AB2468771DEE3A8C0066F46F = {
@@ -437,9 +436,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B5AF4771DF4180D00DE9B50 /* NotificationVC.swift in Sources */,
 				AB6E05631DEE3D1F001A3BE8 /* Model.swift in Sources */,
-				AB0DDD161DF41804000E9486 /* NotificationVC.swift in Sources */,
+				AB08C9061DF42B19007BB9CB /* NotificationVC.swift in Sources */,
 				1BAA8DEC1DF2F45F00643DC8 /* MyCarsVC.swift in Sources */,
 				1B63FE391DF2A24A00352155 /* Extensions.swift in Sources */,
 				1B63FE3D1DF2B23400352155 /* GarageCell.swift in Sources */,
@@ -595,12 +593,13 @@
 			baseConfigurationReference = C291A29DAF356823BF3A6963 /* Pods-kitt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UERQU83HKF;
+				DEVELOPMENT_TEAM = CG63ZWPD86;
 				INFOPLIST_FILE = kitt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.marikond.kitt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -609,12 +608,13 @@
 			baseConfigurationReference = 405F8C9A798E1111DDB15B7E /* Pods-kitt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UERQU83HKF;
+				DEVELOPMENT_TEAM = CG63ZWPD86;
 				INFOPLIST_FILE = kitt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.marikond.kitt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

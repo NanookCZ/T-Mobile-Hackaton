@@ -51,7 +51,7 @@ class GarageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if let cell =  self.tableView(tableView, cellForRowAt: indexPath) as? GarageCell {
             let image = cell.carImage.image
-            cell.animate()
+//            cell.animate()
             Model.instance.selectedCarImage = image
         }
                performSegue(withIdentifier: "menuSegue", sender: self)
