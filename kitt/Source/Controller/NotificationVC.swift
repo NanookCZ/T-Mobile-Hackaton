@@ -50,6 +50,13 @@ class NotificationVC: BaseVC {
         if let notification = Model.instance.currentNotification {
             print(notification)
             
+            notification.texts
+            
+            lblSpeed.text = "Speed warning"
+            lblTitle.text =  notification.texts.0
+            lblAverage.text =  notification.texts.1
+            lblMessage.text =  notification.texts.2
+            
             if Model.instance.switchSpeachNotifications {
                     let utterance = AVSpeechUtterance(string: "Please slow down")
                     utterance.voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle.siri_female_en-GB_premium")

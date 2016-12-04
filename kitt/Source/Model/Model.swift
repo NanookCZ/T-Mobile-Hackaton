@@ -253,10 +253,10 @@ class Model {
         speedArray.append(speed)
         
         let averageSpeed = Int(speedArray.reduce(0, {$0 + $1})) / speedArray.count
-        if averageSpeed > 55 {
+        if averageSpeed > 55 && speedArray.count > 5 && switchNotifications {
             print(averageSpeed)
-            currentNotification = MessageType.Stop("Please slow down", "", "")
-//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CarNotification"), object: self, userInfo: ["car": car])
+            currentNotification = MessageType.Stop("Please slow down", "\(speed)", "\(averageSpeed)")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CarNotification"), object: self, userInfo: ["car": car])
             speedArray = []
         }
     }
