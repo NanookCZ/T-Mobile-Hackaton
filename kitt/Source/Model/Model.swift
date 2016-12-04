@@ -24,9 +24,19 @@ class Model {
     // MARK: Public properties
     var currentCars: [Vehicle]?
     var selectedCar: Vehicle?
+    var carUsers = [User]()
     
+    // MARK: Switches
+    var switchNotifications = false
+    var switchNightMode = false
+    var switchNotificationDuringRide = false
+    var switchShareHotspots = false
+    var switchShareGps = false
+    var switchTwistoPayments = false
+    var switchSpotify = false
+    var switchShareRide = false
+
     var selectedLocation: CLLocation?
-    
     var dateFormatter: DateFormatter = DateFormatter()
     
     // MARK: Class private constructor
@@ -56,13 +66,46 @@ class Model {
         
     }
     
+    public func getAllCarUsers(success: @escaping ([User]) -> Void, failure: @escaping (ModelError) -> Void) {
+        createAnotherUser()
+        self.userInfo(success: { (user) in
+            self.carUsers.append(user)
+            success(self.carUsers)
+        }, failure: { (error) in
+            print(error)
+            failure(error)
+        }
+        )
+        
+    }
+    
+    func createAnotherUser() {
+        let newUser = User()
+        newUser.FirstName = "Dalibor"
+        newUser.LastName = "Kozak"
+        
+        let image = Image()
+        image.Src = "https://images.moj.io/v2/images/23d3637c-6d5a-4c7a-9840-2f492eddb0c9.jpeg"
+        image.Normal = "https://images.moj.io/v2/images/23d3637c-6d5a-4c7a-9840-2f492eddb0c9.jpeg?w=1280&h=720"
+        image.Thumbnail = "https://images.moj.io/v2/images/23d3637c-6d5a-4c7a-9840-2f492eddb0c9.jpeg?w=50&h=50&mode=crop"
+        newUser.Img = image
+        newUser.LastModified = "2016-12-03T16:43:12.237Z"
+        newUser.Id = "ef3ab3c6-137b-48db-a126-4ddb849c7203"
+        self.carUsers.append(newUser)
+    }
+    
+    func getUserDetails(userId: String) {
+        
+    }
+
+    
     public func logout() {
         
         authClient.logout()
         
     }
     
-    public func userCars(success: ([Vehicle]) -> Void, failure: @escaping (ModelError) -> Void) {
+    public func userCars(success: @escaping ([Vehicle]) -> Void, failure: @escaping (ModelError) -> Void) {
         
         restClient.get().vehicles(nil).run({ (vehicles) in
             self.currentCars = vehicles as? [Vehicle]

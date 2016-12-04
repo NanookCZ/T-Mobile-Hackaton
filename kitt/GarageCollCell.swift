@@ -9,14 +9,8 @@
 import UIKit
 import MojioSDK
 
-protocol GarageCollCellDelegate {
-    func didSelectCar(index: IndexPath)
-}
-
 class GarageCollCell: UICollectionViewCell, UITableViewDataSource {
-    
-    var delegate: GarageCollCellDelegate?
-   
+       
     @IBOutlet weak var carImage: UIImageView!
     @IBOutlet weak var year: UILabel!
     @IBOutlet weak var distance: UILabel!
@@ -26,8 +20,8 @@ class GarageCollCell: UICollectionViewCell, UITableViewDataSource {
 
     @IBOutlet weak var bgView: UIView!
 
-    var index: IndexPath?
     var carUsers = [User]()
+    var thisCar: Vehicle?
 
     
     override func awakeFromNib() {
@@ -41,8 +35,7 @@ class GarageCollCell: UICollectionViewCell, UITableViewDataSource {
     }
     
     func configureCell(car: Vehicle, index: IndexPath) {
-        self.index = index
-        createAnotherUser()
+        self.thisCar = car
 
         if let url = URL(string: car.VehicleImage?.Normal ?? "") {
             carImage.af_setImage(withURL: url)
@@ -53,40 +46,26 @@ class GarageCollCell: UICollectionViewCell, UITableViewDataSource {
         if let userId = car.Id {
             getUserDetails(userId: userId)
         }
-    }
-
-    func createAnotherUser() {
-        let newUser = User()
-        newUser.FirstName = "Dalibor"
-        newUser.LastName = "Kozak"
-
-        let image = Image()
-        image.Src = "https://images.moj.io/v2/images/23d3637c-6d5a-4c7a-9840-2f492eddb0c9.jpeg"
-        image.Normal = "https://images.moj.io/v2/images/23d3637c-6d5a-4c7a-9840-2f492eddb0c9.jpeg?w=1280&h=720"
-        image.Thumbnail = "https://images.moj.io/v2/images/23d3637c-6d5a-4c7a-9840-2f492eddb0c9.jpeg?w=50&h=50&mode=crop"
-        newUser.Img = image
-        newUser.LastModified = "2016-12-03T16:43:12.237Z"
-        newUser.Id = "ef3ab3c6-137b-48db-a126-4ddb849c7203"
-        self.carUsers.append(newUser)
-    }
-
-    func getUserDetails(userId: String) {
-        Model.instance.userInfo(success: { (user) in
-            self.carUsers.append(user)
-            self.tableView.reloadData()
-        }, failure: { (error) in
-            print(error)
-        })
+        
         if let date = Model.instance.dateFormatter.date(from: car.CreatedOn ?? "") {
             let yearComponent = Calendar.current.component(.year, from: date)
             year.text = String(yearComponent)
         }
         distance.text = String((describing: car.VehicleOdometer?.Value ?? 0.0) / 1000.0)
+    }    
+
+    func getUserDetails(userId: String) {
+        Model.instance.getAllCarUsers(success: { (users) in
+            self.carUsers = users
+            self.tableView.reloadData()
+        }, failure: { failure in
+            print(failure)
+        })
     }
 
     @IBAction func selectButtonAction(_ sender: UIButton) {
-        if let index = index {
-            delegate?.didSelectCar(index: index)
+        if let car = thisCar {
+            Model.instance.selectedCar = car
         }
     }
     

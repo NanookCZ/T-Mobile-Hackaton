@@ -15,28 +15,33 @@ class StateVC: UIViewController {
     @IBOutlet weak var vin: UILabel!
     @IBOutlet weak var added: UILabel!
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var model: UILabel!
+    @IBOutlet weak var registration: UILabel!
     @IBOutlet weak var year: UILabel!
     @IBOutlet weak var owners: UILabel!
     
     @IBOutlet weak var notifications: UISwitch!
     @IBAction func notificationsAction(_ sender: UISwitch) {
+        Model.instance.switchNotifications = sender.isOn
     }
     
     @IBOutlet weak var nightMode: UISwitch!
     @IBAction func nightModeAction(_ sender: UISwitch) {
+        Model.instance.switchNightMode = sender.isOn
     }
 
     @IBOutlet weak var notificationsRide: UISwitch!
     @IBAction func notificationsRideAction(_ sender: UISwitch) {
+        Model.instance.switchNotificationDuringRide = sender.isOn
     }
     
     @IBOutlet weak var hotspots: UISwitch!
     @IBAction func hotspotsAction(_ sender: UISwitch) {
+        Model.instance.switchShareHotspots = sender.isOn
     }
 
     @IBOutlet weak var gps: UISwitch!
     @IBAction func gpsAction(_ sender: UISwitch) {
+        Model.instance.switchShareGps = sender.isOn
     }
 
     
@@ -46,6 +51,26 @@ class StateVC: UIViewController {
 
         bgView.layer.cornerRadius = 5.0
         bgView.clipsToBounds = true
+        
+        if let car = Model.instance.selectedCar {
+            vin.text = car.VIN
+            added.text = car.CreatedOn
+            name.text = car.Name
+            registration.text = car.LicensePlate
+        }
+        
+        Model.instance.getAllCarUsers(success: { (users) in
+            self.owners.text = "\(users.count)"
+        }, failure: {error in
+        print(error)}
+        )
+        
+        notifications.setOn(Model.instance.switchNotifications, animated: true)
+        nightMode.setOn(Model.instance.switchNightMode, animated: true)
+        notificationsRide.setOn(Model.instance.switchNotificationDuringRide, animated: true)
+        hotspots.setOn(Model.instance.switchShareHotspots, animated: true)
+        gps.setOn(Model.instance.switchShareGps, animated: true)
+        
     }
 
     override func didReceiveMemoryWarning() {
