@@ -94,7 +94,7 @@ class Model {
         selectedLocation = location
         
         
-        return (45.0, gasStations.first!)
+        return (450000.0, gasStations.first!)
         
     }
     
@@ -256,7 +256,7 @@ class Model {
         let averageSpeed = speedArray.reduce(0, {$0 + $1})
         if averageSpeed > 55 {
             print(averageSpeed)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CarNotification"), object: self, userInfo: ["car": car])
+            //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CarNotification"), object: self, userInfo: ["car": car])
         }
     }
     

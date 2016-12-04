@@ -462,7 +462,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMh-JO-U49" userLabel="Search View">
-                                        <rect key="frame" x="19" y="551" width="337" height="169"/>
+                                        <rect key="frame" x="19" y="551" width="337" height="125"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input destination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Oe-Uk-Esk">
                                                 <rect key="frame" x="8" y="8" width="114.5" height="19"/>
@@ -471,7 +471,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqO-dE-lZY">
-                                                <rect key="frame" x="8" y="39" width="321" height="55"/>
+                                                <rect key="frame" x="8" y="39" width="321" height="33"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -480,7 +480,7 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71t-GR-WmE" customClass="AnimatedButton" customModule="kitt" customModuleProvider="target">
-                                                <rect key="frame" x="209" y="106" width="120" height="55"/>
+                                                <rect key="frame" x="209" y="84" width="120" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="w7Q-rF-qYh"/>
                                                 </constraints>
@@ -604,7 +604,7 @@
                                     <constraint firstItem="FMh-JO-U49" firstAttribute="centerX" secondItem="EXf-ya-iBL" secondAttribute="centerX" id="1D3-2y-E8W"/>
                                     <constraint firstItem="VcT-4P-bpf" firstAttribute="top" secondItem="EXf-ya-iBL" secondAttribute="top" constant="70" id="20T-4b-FlB"/>
                                     <constraint firstItem="hDW-Xp-ctv" firstAttribute="centerX" secondItem="EXf-ya-iBL" secondAttribute="centerX" id="FH8-Zd-yXB"/>
-                                    <constraint firstAttribute="bottom" secondItem="FMh-JO-U49" secondAttribute="bottom" constant="20" id="IpL-P2-jb5"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FMh-JO-U49" secondAttribute="bottom" constant="20" id="IpL-P2-jb5"/>
                                     <constraint firstItem="W9L-bA-lTf" firstAttribute="centerX" secondItem="EXf-ya-iBL" secondAttribute="centerX" id="KST-IG-VKe"/>
                                     <constraint firstItem="W9L-bA-lTf" firstAttribute="top" secondItem="Rg2-Xw-fRE" secondAttribute="bottom" constant="12" id="Kga-FX-jsl"/>
                                     <constraint firstItem="hDW-Xp-ctv" firstAttribute="width" secondItem="Rg2-Xw-fRE" secondAttribute="width" id="TrY-8T-vMq"/>
@@ -641,6 +641,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
+                        <outlet property="butReset" destination="Nsb-aH-KZH" id="zqO-qa-7Qd"/>
                         <outlet property="butSet" destination="71t-GR-WmE" id="4Jf-S8-9x2"/>
                         <outlet property="containerView" destination="VcT-4P-bpf" id="dUQ-Ow-TwV"/>
                         <outlet property="effectiveTanking" destination="lyK-CI-82S" id="KDD-eo-xf7"/>

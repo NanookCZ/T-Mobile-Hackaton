@@ -44,6 +44,7 @@ class RideVC: BaseVC, UITextFieldDelegate {
     
     @IBOutlet var txtSearch: UITextField!
     @IBOutlet var butSet: AnimatedButton!
+    @IBOutlet var butReset: AnimatedButton!
     
     var car: Vehicle? {
         didSet {
@@ -76,6 +77,11 @@ class RideVC: BaseVC, UITextFieldDelegate {
         butSet.layer.borderColor = UIColor.white.cgColor
         butSet.layer.borderWidth = 1.0
         butSet.clipsToBounds = true
+        
+        butReset.layer.cornerRadius = 5.0
+        butReset.layer.borderColor = UIColor.white.cgColor
+        butReset.layer.borderWidth = 1.0
+        butReset.clipsToBounds = true
         
         // Do any additional setup after loading the view.
         containerView.layer.cornerRadius = 5.0
@@ -191,7 +197,7 @@ class RideVC: BaseVC, UITextFieldDelegate {
                     self.effectiveTanking.text = tripInfo.bestStation.name + ", " + String(Int(tripInfo.bestStation.location.distance(from: carLocation))) + "m, " + String(tripInfo.bestStation.price) + " Kč"
                     
                     let consumption: Double = Double(self.car?.VehicleFuelEfficiency?.Value ?? 10.0) / 100.0
-                    self.totalPrice.text = String(Double(tripInfo.bestStation.price) * (tripInfo.distance / 1000) * consumption)
+                    self.totalPrice.text = String(Int(Double(tripInfo.bestStation.price) * (tripInfo.distance / 1000) * consumption)) + " Kč"
                     
                     UIView.animate(withDuration: 0.5, animations: {
                         self.searchContainerView.isHidden = true
@@ -209,8 +215,8 @@ class RideVC: BaseVC, UITextFieldDelegate {
         Model.instance.selectedLocation = nil
         
         UIView.animate(withDuration: 0.5, animations: {
-            self.searchContainerView.isHidden = true
-            self.infoContainerView.isHidden = false
+            self.searchContainerView.isHidden = false
+            self.infoContainerView.isHidden = true
         })
         
     }
